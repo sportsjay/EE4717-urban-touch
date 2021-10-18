@@ -1,0 +1,170 @@
+/* Global CSS */
+
+:root {
+  /* Page Configs */
+  --root-margin: 0;
+  --root-padding: 0;
+
+  /* desktop */
+  --body-padding-horizontal: 120px;
+  --body-padding-vertical: 10px;
+  /* mobile */
+
+  /* Component Configs */
+  --global-color-primary-gray: #636363;
+  --global-color-secondary-gray: #c4c4c4;
+  --global-color-primary-black: #000000;
+  --global-color-primary-white: #ffffff;
+  --global-color-success: #2fe739;
+  --global-color-warning: #e08c26;
+  --global-color-danger: #cc2500;
+
+  /* Font Configurations */
+  --global-font-family: Verdana, sans-serif;
+  --global-font-size: 0.8rem;
+  --global-text-color: #222;
+  --global-primary-title-size: 2rem;
+}
+
+/* global wrappers */
+body {
+  margin: var(--root-margin);
+  padding: var(--root-padding);
+
+  font-family: var(--global-font-family);
+}
+
+.global-content-wrapper {
+  padding: 0px var(--body-padding-horizontal);
+  box-sizing: border-box;
+}
+
+.global-flex-column-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.global-flex-row-wrapper {
+  display: flex;
+  flex-direction: row;
+}
+
+.global-content-typography-title {
+  font-size: 1.6em;
+  font-weight: 600;
+  color: var(--global-color-primary-black);
+}
+
+.global-content-typography-text {
+  font-size: 1em;
+  font-weight: 500;
+  color: var(--global-color-primary-black);
+}
+
+.global-content-typography-subtext {
+  font-size: 0.8em;
+  font-weight: 500;
+  color: var(--global-color-primary-black);
+}
+
+/* Navigations */
+nav {
+  background-color: var(--global-color-primary-gray);
+
+  width: 100%;
+  height: 140px;
+
+  align-items: center;
+  justify-content: space-between;
+}
+
+nav > section {
+  gap: 40px;
+}
+
+nav > section > a {
+  text-decoration: none;
+  text-transform: capitalize;
+
+  color: var(--global-color-primary-white) !important;
+}
+
+nav > section > a:active {
+  color: var(--global-color-secondary-gray) !important;
+}
+
+nav > section > a:visited {
+  color: var(--global-color-secondary-gray) !important;
+}
+
+/* Footer */
+footer {
+  /* Temporary */
+  margin-top: 20px;
+  background-color: var(--global-color-primary-gray);
+
+  width: 100%;
+  min-height: 480px;
+  height: max-content;
+
+  align-items: start;
+}
+
+footer > div.top-content {
+  width: 100%;
+
+  gap: 20px;
+  justify-content: space-between;
+
+  padding-top: calc(var(--body-padding-vertical) * 4);
+  padding-bottom: calc(var(--body-padding-vertical) * 8);
+  box-sizing: border-box;
+}
+
+footer > div.top-content > section {
+  width: max-content;
+  max-width: 320px;
+}
+
+footer > div.top-content > section > header {
+  color: var(--global-color-primary-white);
+  margin-bottom: 20px;
+}
+
+footer > div.top-content > section > span {
+  color: var(--global-color-secondary-gray);
+}
+
+footer > div.top-content > section > button {
+  width: 200px;
+  padding: 10px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  background-color: var(--global-color-secondary-gray);
+
+  color: var(--global-color-primary-white);
+  font-weight: 600;
+
+  border: 0px;
+  border-radius: 50px;
+
+  transition: ease-in 0.04s;
+}
+
+footer > div.top-content > section > button:active {
+  filter: brightness(0.8);
+}
+
+footer > div.bottom-content {
+  color: var(--global-color-primary-white);
+  font-weight: 600;
+
+  width: 100%;
+  padding: calc(var(--body-padding-vertical) * 2) 40px;
+  box-sizing: border-box;
+
+  border-top: 2px solid var(--global-color-primary-white);
+}
