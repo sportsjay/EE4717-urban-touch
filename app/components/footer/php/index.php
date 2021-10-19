@@ -1,22 +1,22 @@
 <footer class="global-content-wrapper global-flex-column-wrapper">
   <div class="global-flex-row-wrapper top-content">
-    <section class="global-flex-column-wrapper">Urban Touch</section>
-    <section class="global-flex-column-wrapper">
-      <header class="global-content-typography-title">JUST FOR YOU</header>
-      <span>Winter Clearance 2021</span>
-      <span>Browse our Collections</span>
-      <span>Hot & Limited Items</span>
+    <section class="global-flex-column-wrapper"><img src="../../../../assets/images/icon_white.png" /></section>
+    <section class="global-flex-column-wrapper global-content-typography-text">
+      <header class="global-content-typography-subtitle">JUST FOR YOU</header>
+      <span><a href="">Winter Clearance 2021</a></span>
+      <span><a>Browse our Collections</a></span>
+      <span><a>Hot & Limited Items</a></span>
     </section>
     <section class="global-flex-column-wrapper">
-      <header class="global-content-typography-title">EXPLORE</header>
-      <span>About Urban Touch</span>
-      <span>Our Founders</span>
-      <span>Our Location</span>
-      <span>FAQs</span>
+      <header class="global-content-typography-subtitle">EXPLORE</header>
+      <span><a>About Urban Touch</a></span>
+      <span><a>Our Founders</a></span>
+      <span><a>Our Location</a></span>
+      <span><a>FAQs</a></span>
     </section>
     <section class="global-flex-column-wrapper">
-      <header class="global-content-typography-title">SAY HELLO</header>
-      <span>Feel free to drop us a message. We would love to hear from
+      <header class="global-content-typography-subtitle">SAY HELLO</header>
+      <span>Feel free to drop us a message. <br>We would love to hear from
         you!</span>
       <button>CONTACT US</button>
     </section>
