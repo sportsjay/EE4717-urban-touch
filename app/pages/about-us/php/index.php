@@ -15,9 +15,51 @@
   <!-- Navigation -->
   <?php include '../../../components/navigation/php/index.php' ?>
   <!-- Banner -->
-  <header></header>
+  <header class="about-us global-content-wrapper  global-flex-column-wrapper">
+    <span class="global-content-typography-title">ABOUT US</span>
+    <hr class="global-horizontal-line" width="90px">
+  </header>
   <!-- Body -->
-  <div></div>
+  <div class="tagline-img global-flex-column-wrapper global-content-wrapper">
+    <span class="global-content-typography-title">Founded on Fit. Built on Service. <br>Focused on Style.</span>
+  </div>
+  <div class="about-us global-flex-column-wrapper">
+    <section class="global-flex-column-wrapper global-content-wrapper">
+      <img src="../../../../assets/images/icon.png" />
+      <span class="global-content-typography-text">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus laoreet libero eget lorem facilisis, sed dignissim orci eleifend. Sed pretium sem sit amet magna tristique, quis commodo augue vulputate. Sed imperdiet augue at mi sodales semper. Aliquam blandit enim vel an
+      </span>
+    </section>
+    <section class="global-flex-row-wrapper global-content-wrapper">
+      <img src="../../../../assets/images/testimg1.jpg" width="400px" height="300px" />
+      <div class="global-flex-column-wrapper">
+        <header class="global-content-typography-title">OUR FOUNDERS</header>
+        <hr class="global-horizontal-line" width="130px">
+        <span class="global-content-typography-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus laoreet libero eget lorem facilisis, sed dignissim orci eleifend. Sed pretium sem sit amet magna tristique, quis commodo augue.</span>
+    </section>
+    <section class="global-flex-row-wrapper global-content-wrapper">
+      <div class="global-flex-column-wrapper">
+        <header class="global-content-typography-title">FIND US ON</header>
+        <hr class="global-horizontal-line" width="110px">
+        <table class="global-content-typography-text">
+          <tr>
+            <td><i class="fas fa-location-arrow"></i></td>
+            <td>20 Nanyang Avenue, Singapore 639809</td>
+          </tr>
+          <tr>
+            <td><i class="fas fa-envelope"></i></td>
+            <td>urbantouch@gmail.com</td>
+          </tr>
+          <tr>
+            <td><i class="fas fa-phone-alt"></i></td>
+            <td>(+65) 8311 8031</td>
+          </tr>
+        </table>
+      </div>
+      <img src="../../../../assets/images/testimg1.jpg" width="300px" height="300px" />
+    </section>
+
+  </div>
   <!-- Footer -->
   <?php include '../../../components/footer/php/index.php' ?>
 </body>

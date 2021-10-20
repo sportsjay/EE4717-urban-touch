@@ -28,7 +28,7 @@
 
   /* Font Configurations */
   --global-font-family: Verdana, sans-serif;
-  --global-font-size: 0.8rem;
+  --global-icon-size: 1.4rem;
   --global-text-color: #222;
   --global-primary-title-size: 2rem;
 }
@@ -57,38 +57,49 @@ body {
 }
 
 .global-content-typography-title {
-  font-size: 1.5em;
+  font-size: 1.6rem;
   font-weight: 600;
   color: var(--global-color-primary-text);
 }
 
 .global-content-typography-subtitle {
-  font-size: 1.2em;
+  font-size: 1.2rem;
   font-weight: 500;
   color: var(--global-color-primary-text);
 }
 
 .global-content-typography-text {
-  font-size: 1em;
+  font-size: 1.05rem;
   font-weight: 500;
+  line-height: 1.4em;
   color: var(--global-color-primary-text);
 }
 
 .global-content-typography-subtext {
-  font-size: 0.8em;
+  font-size: 0.9rem;
   font-weight: 500;
   color: var(--global-color-primary-text);
+}
+
+.global-horizontal-line {
+  border: 2px solid var(--global-color-primary-orange);
+  border-radius: 20px;
 }
 
 /* ========================== NavBar =============================== */
 nav {
   background-color: var(--global-color-primary-white);
 
+  position: sticky;
+  top: 0;
+
   width: 100%;
-  height: 100px;
+  height: 85px;
 
   align-items: center;
   justify-content: space-between;
+
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
 }
 
 nav img {
@@ -116,7 +127,7 @@ footer {
   background-color: var(--global-color-primary-gray);
 
   width: 100%;
-  min-height: 380px;
+  min-height: 250px;
   height: max-content;
 
   align-items: start;
@@ -130,17 +141,17 @@ footer img {
 footer > div.top-content {
   width: 100%;
 
-  gap: 20px;
+  gap: 25px;
   justify-content: space-between;
 
   padding-top: calc(var(--body-padding-vertical) * 4);
-  padding-bottom: calc(var(--body-padding-vertical) * 5);
+  padding-bottom: calc(var(--body-padding-vertical) * 4);
   box-sizing: border-box;
 }
 
 footer > div.top-content > section {
   width: max-content;
-  max-width: 320px;
+  max-width: 350px;
 }
 
 footer > div.top-content > section > header {
@@ -163,33 +174,102 @@ footer > div.top-content > section > span > a:hover {
   text-decoration: underline;
 }
 
-footer > div.top-content > section > button {
-  width: 200px;
-  padding: 10px;
-  margin-top: 20px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-sizing: border-box;
-  background-color: var(--global-color-secondary-gray); 
-
-  color: var(--global-color-primary-white);
-  font-weight: 600;
-
-  border: 0px;
-  border-radius: 50px;
-
-  transition: ease-in 0.04s;
-}
-
 footer > div.bottom-content {
   color: var(--global-color-primary-white);
-  font-weight: 600;
 
   width: 100%;
-  padding: calc(var(--body-padding-vertical) * 2) 40px;
+  padding: calc(var(--body-padding-vertical) * 3) 40px calc(var(--body-padding-vertical) * 4.5);
   box-sizing: border-box;
+  justify-content: space-between;
 
   border-top: 2px solid var(--global-color-primary-white);
+}
+
+footer > div.bottom-content > section > a {
+  text-decoration: none;
+  color: var(--global-color-primary-white);
+  font-size: var(--global-icon-size);
+
+  margin-left: 20px;
+}
+
+/* CSS for footer button animation */
+footer .button {
+  margin-top: 10px;
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  outline: none;
+  border: 0;
+  vertical-align: middle;
+  text-decoration: none;
+  background: transparent;
+  padding: 0;
+  font-size: inherit;
+  font-family: inherit;
+}
+footer .button.learn-more {
+  width: 12rem;
+  height: auto;
+}
+footer .button.learn-more .circle {
+  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  position: relative;
+  display: block;
+  margin: 0;
+  width: 3rem;
+  height: 3rem;
+  background: #fff;
+  border-radius: 1.625rem;
+}
+footer .button.learn-more .circle .icon {
+  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  background: #636363;
+}
+footer .button.learn-more .circle .icon.arrow {
+  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  left: 0.625rem;
+  width: 1.125rem;
+  height: 0.125rem;
+  background: none;
+}
+footer .button.learn-more .circle .icon.arrow::before {
+  position: absolute;
+  content: '';
+  top: -0.30rem;
+  right: 0.05rem;
+  width: 0.575rem;
+  height: 0.575rem;
+  border-top: 0.125rem solid #636363;
+  border-right: 0.125rem solid #636363;
+  transform: rotate(45deg);
+}
+footer .button.learn-more .button-text {
+  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 0.7rem 0;
+  margin: 0 0 0 1.85rem;
+  color: #fff;
+  font-weight: 400;
+  line-height: 1.7;
+  text-align: center;
+  text-transform: uppercase;
+}
+footer .button:hover .circle {
+  width: 100%;
+}
+footer .button:hover .circle .icon.arrow {
+  background: #636363;
+  transform: translate(1rem, 0);
+}
+footer .button:hover .button-text {
+  color: #636363;
 }
