@@ -1,1 +1,24 @@
 @import "../../../global.css";
+
+/* Body */
+.content {
+  gap: 40px;
+}
+
+.utilities-wrapper {
+  flex: 2;
+  height: 100%;
+  background-color: blueviolet;
+}
+
+.filter-wrapper {
+}
+
+.recommendation-wrapper {
+}
+
+.product-list {
+  flex: 5;
+  height: 100%;
+  background-color: aqua;
+}

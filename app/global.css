@@ -13,6 +13,7 @@
   /* Component Configs */
   --global-color-primary-gray: #636363;
   --global-color-secondary-gray: #c4c4c4;
+  --global-color-light-gray: #f1f1f1;
   --global-color-primary-black: #000000;
   --global-color-primary-white: #ffffff;
   --global-color-success: #2fe739;
@@ -44,6 +45,12 @@ body {
   flex-direction: column;
 }
 
+.global-padding-horizontal {
+  box-sizing: border-box;
+  padding-left: var(--body-padding-horizontal);
+  padding-right: var(--body-padding-horizontal);
+}
+
 .global-flex-row-wrapper {
   display: flex;
   flex-direction: row;
@@ -65,6 +72,15 @@ body {
   font-size: 0.8em;
   font-weight: 500;
   color: var(--global-color-primary-black);
+}
+
+/* animations */
+.hover-transition {
+  transition: ease-out 0.4s;
+}
+
+.hover-animation:hover {
+  filter: brightness(0.7);
 }
 
 /* Navigations */

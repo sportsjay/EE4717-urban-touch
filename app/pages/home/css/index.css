@@ -1,0 +1,33 @@
+@import url("../../../global.css");
+
+/* Header */
+header.banner {
+  width: 100%;
+  height: 32vw;
+  background-color: var(--global-color-secondary-gray);
+}
+
+/* Body */
+.content {
+  margin-bottom: 120px;
+}
+
+.product-list {
+  width: 100%;
+  margin-bottom: 20px;
+  height: max-content;
+  background-color: var(--global-color-light-gray);
+  gap: 20px;
+  overflow-y: hidden;
+}
+
+.product-wrapper {
+  padding: 10px;
+  box-sizing: border-box;
+  background-color: var(--global-color-secondary-gray);
+}
+
+.image-container {
+  height: 160px;
+  width: 240px;
+}

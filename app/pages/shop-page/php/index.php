@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="../css/index.css" />
   <title>Shop</title>
 </head>
+<?php include '../../../utils/connectDB.php' ?>
 
 <body>
   <!-- Navigation -->
@@ -15,7 +16,13 @@
   <!-- Banner -->
   <header></header>
   <!-- Body -->
-  <div></div>
+  <div class="content global-flex-row-wrapper global-padding-horizontal">
+    <div class="utilities-wrapper global-flex-column-wrapper">test
+      <section class="filter-wrapper"></section>
+      <section class="recommendation-wrapper"></section>
+    </div>
+    <div class="product-list">test</div>
+  </div>
   <!-- Footer -->
   <?php include '../../../components/footer/php/index.php' ?>
 </body>

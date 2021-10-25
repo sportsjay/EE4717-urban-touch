@@ -7,10 +7,4 @@ $password = "f32ee";
 $conn = mysqli_connect($servername, $username, $password);
 
 // Check connection
-if (!$conn) {
-  die("Connection failed: " . mysqli_connect_error());
-} else {
-  echo '<script type="text/javascript">',
-  'alert("connected!");',
-  '</script>';
-}
+if (!$conn) die("Connection failed: " . mysqli_connect_error());
