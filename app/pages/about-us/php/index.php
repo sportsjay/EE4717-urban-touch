@@ -21,7 +21,7 @@
   </header>
   <!-- Body -->
   <div class="tagline-img global-flex-column-wrapper global-content-wrapper">
-    <span class="global-content-typography-title">Founded on Fit. Built on Service. <br>Focused on Style.</span>
+    <span class="global-content-typography-title">Founded on <span style="color: var(--global-color-secondary-orange);">Fit</span>. Built on <span style="color: var(--global-color-secondary-orange);">Service</span>. <br>Focused on <span style="color: var(--global-color-secondary-orange);">Style</span>.</span>
   </div>
   <div class="about-us global-flex-column-wrapper">
     <section class="global-flex-column-wrapper global-content-wrapper">
