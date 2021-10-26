@@ -2,7 +2,7 @@
 
 ?>
 <nav class="global-content-wrapper global-flex-row-wrapper">
-  <div><img src="../../../../assets/images/icon.png" /></div>
+  <a href="../../../pages/home/php/index.php"><div><img src="../../../../assets/images/icon.png" /></div></a>
   <section class="global-flex-row-wrapper">
     <a href="../../../pages/shop-page/php/index.php" class="global-content-typography-subtitle"><span>Shop</span></a>
     <a href="../../../pages/about-us/php/index.php" class="global-content-typography-subtitle"><span>About Us</span></a>
