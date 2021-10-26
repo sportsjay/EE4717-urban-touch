@@ -93,6 +93,15 @@ body {
   border-radius: 20px;
 }
 
+/* animations */
+.hover-transition {
+  transition: ease-out 0.4s;
+}
+
+.hover-animation:hover {
+  filter: brightness(0.7);
+}
+
 /* ========================== NavBar =============================== */
 nav {
   background-color: var(--global-color-primary-white);
