@@ -21,7 +21,7 @@
       <section class="filter-wrapper"></section>
       <section class="recommendation-wrapper"></section>
     </div>
-    <div class="product-list">test</div>
+    <div class="product-list"></div>
   </div>
   <!-- Footer -->
   <?php include '../../../components/footer/php/index.php' ?>
