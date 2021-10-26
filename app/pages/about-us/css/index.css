@@ -1,1 +1,84 @@
 @import "../../../global.css";
+
+header.about-us {
+    padding: 35px 0 25px;
+    background-color: var(--global-color-primary-white);
+    text-align: center;
+
+}
+
+.tagline-img {
+    width: 100%;
+    height: 450px;
+    text-align: center;
+    justify-content: center;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.65),
+    rgba(0, 0, 0, 0.65)), url("../../../../assets/images/testimg1.jpg");
+    background-position: center;
+}
+
+.tagline-img > span {
+    color: var(--global-color-primary-white);
+}
+
+div.about-us {
+}
+
+div.about-us > section:nth-of-type(1){
+    text-align: center;
+    padding-bottom: 100px;
+    padding-top: 60px;
+}
+
+div.about-us > section:nth-of-type(1) > img {
+    width: 30%;
+    min-width: 300px;
+    align-self: center;
+    margin-bottom: 30px;
+}
+
+div.about-us > section:nth-of-type(1) > span {
+    width: 60%;
+    min-width: 500px;
+    align-self: center;
+}
+
+div.about-us > section:nth-of-type(2){
+    text-align: left;
+    background-color: var(--global-color-primary-pink);
+    padding-bottom: 70px;
+    padding-top: 50px;    
+    gap: 80px;
+}
+
+div.about-us > section:nth-of-type(2) > div {
+    justify-content: center;
+}
+
+div.about-us > section:nth-of-type(2) > div > hr,
+div.about-us > section:nth-of-type(3) > div > hr{
+    margin-left: 0;
+    margin-bottom: 30px;
+}
+
+div.about-us > section:nth-of-type(3){
+    text-align: left;
+    align-self: center;
+    padding-bottom: 70px;
+    padding-top: 70px;    
+    gap: 80px;
+    width: 80%;
+    justify-content: center;
+}
+
+
+div.about-us > section:nth-of-type(3) > div {
+    justify-content: center;
+}
+
+div.about-us td {
+    padding-right: 30px;
+    padding-bottom: 5px;
+    padding-top: 5px;
+}
+
