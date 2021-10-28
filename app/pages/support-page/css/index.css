@@ -1,1 +1,75 @@
 @import "../../../global.css";
+
+header.contact-us {
+  padding: 35px 0 25px;
+  background-color: var(--global-color-primary-white);
+  text-align: center;
+}
+
+.contact-us table {
+}
+
+.contact-us input[type="text"],
+.contact-us textarea {
+  padding: 10px;
+  width: 100%;
+}
+
+.contact-us td {
+  width: 50%;
+}
+
+.contact-us .form-items {
+  text-align: left;
+  width: 85%;
+  height: 100px;
+  margin: 0 auto 40px auto;
+  gap: 10px;
+}
+
+tr:nth-last-of-type(1) .form-items,
+tr:nth-last-of-type(2) .form-items {
+  width: 92.5%;
+  height: fit-content;
+}
+
+.contact-us .global-button {
+  border-width: 1px;
+  width: 100%;
+  padding: 15px;
+  background-color: var(--global-color-primary-orange);
+  color: var(--global-color-primary-white);
+}
+
+.contact-us .global-button:hover {
+  text-decoration: underline;
+}
+
+.faq {
+  width: 92.5%;
+  margin: 0 auto;
+  gap: 40px;
+  padding-bottom: 80px;
+}
+
+.faq-component {
+  background-color: var(--global-color-primary-pink);
+  border-radius: 10px;
+}
+
+.faq-title {
+  justify-content: space-between;
+  padding: 30px 50px;
+  border-radius: 10px;
+  background-color: var(--global-color-primary-orange);
+}
+
+.faq-title > span {
+  color: var(--global-color-primary-white);
+  margin: auto 0;
+}
+
+.faq-content {
+  padding: 30px 60px;
+  text-align: justify;
+}

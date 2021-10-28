@@ -18,14 +18,14 @@
   --global-color-primary-white: #ffffff;
 
   --global-color-primary-text: #747272;
-  --global-color-primary-pink: #FCECDD;
+  --global-color-primary-pink: #f9f3df;
   --global-color-secondary-pink: #f5cac2;
   --global-color-primary-orange: #ed7966;
   --global-color-secondary-orange: #ec8272;
 
   --global-color-success: #2fe739;
   --global-color-warning: #e08c26;
-  --global-color-danger: #cc2500;
+  --global-color-danger: #ff0000;
 
   /* Font Configurations */
   --global-font-family: Verdana, sans-serif;
@@ -93,6 +93,21 @@ body {
   border-radius: 20px;
 }
 
+.global-button {
+  color: var(--global-color-primary-text);
+  padding: 8px 15px;
+  border-radius: 10px;
+  text-align: center;
+  border: 2px solid var(--global-color-primary-text);
+  cursor: pointer;
+  font-size: 1.05rem; /* same size as text */
+}
+
+.global-button:hover {
+  color: var(--global-color-primary-orange);
+  text-decoration: underline;
+}
+
 /* animations */
 .hover-transition {
   transition: ease-out 0.4s;
@@ -100,6 +115,33 @@ body {
 
 .hover-animation:hover {
   filter: brightness(0.7);
+}
+
+/* Inputs */
+
+input[type="checkbox"] {
+  margin-top: 5px;
+  transform: scale(1.2);
+}
+
+input[type="text"],
+textarea {
+  padding: 5px;
+  border: 1px solid var(--global-color-primary-gray);
+  transition-duration: 0.3s;
+  outline: none;
+  transition-property: border-color;
+  box-sizing: border-box;
+}
+
+input[type="text"]:focus,
+textarea:focus {
+  border-color: var(--global-color-primary-orange);
+}
+
+.input-danger {
+  border: 1px solid var(--global-color-danger) !important;
+  box-shadow: inset 0px 0px 0px 3px var(--global-color-danger);
 }
 
 /* ========================== NavBar =============================== */
@@ -136,7 +178,6 @@ nav > section > a {
 nav > section > a:hover {
   color: var(--global-color-primary-orange) !important;
 }
-
 
 /* =========================== Footer =============================== */
 footer {
@@ -194,7 +235,8 @@ footer > div.bottom-content {
   color: var(--global-color-primary-white);
 
   width: 100%;
-  padding: calc(var(--body-padding-vertical) * 3) 40px calc(var(--body-padding-vertical) * 4.5);
+  padding: calc(var(--body-padding-vertical) * 3) 40px
+    calc(var(--body-padding-vertical) * 4.5);
   box-sizing: border-box;
   justify-content: space-between;
 
@@ -255,8 +297,8 @@ footer .button.learn-more .circle .icon.arrow {
 }
 footer .button.learn-more .circle .icon.arrow::before {
   position: absolute;
-  content: '';
-  top: -0.30rem;
+  content: "";
+  top: -0.3rem;
   right: 0.05rem;
   width: 0.575rem;
   height: 0.575rem;
