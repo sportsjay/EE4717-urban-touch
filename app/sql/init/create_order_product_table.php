@@ -15,7 +15,7 @@ if (!$conn) {
 $sql = "CREATE TABLE order_product (
 id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 order_id INT(6) NOT NULL, 
-product_id INT(6) NOT NULL,
+product_id INT(6) NOT NULL
 )";
 
 if (mysqli_query($conn, $sql)) {

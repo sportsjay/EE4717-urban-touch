@@ -12,10 +12,10 @@ if (!$conn) {
 }
 
 // sql to create table
-$sql = "CREATE TABLE order (
+$sql = "CREATE TABLE orders (
 id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY, 
-order_code VARCHAR(64) NOT NULL,
-status VARCHAR(64) DEFAULT 'Pending'
+order_code VARCHAR(30) NOT NULL,
+order_status VARCHAR(30) DEFAULT 'Pending'
 )";
 
 if (mysqli_query($conn, $sql)) {
