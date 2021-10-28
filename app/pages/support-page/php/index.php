@@ -109,6 +109,11 @@
 
       <?php echo createComponent(5, "When will my order be shipped?", "We will ship the item within the same day that the order is placed. If the order checkout timing is beyond 7PM, then the item will be shipped out on the next working day. <br><br> The shipping speed varies and can be selected at checkout. Our standard ground shipping takes between 5-7 business days.") ?>
 
+      <span class="global-content-typography-text">If you have any other questions that are not listed in the FAQs
+        above, feel free to drop us an inquiry using the Contact Us form above! Alternatively, you can also send your
+        questions to <a href="mailto:urbantouch@gmail.com">urbantouch@gmail.com</a> and we will get back to you ASAP.
+      </span>
+
     </div>
   </div>
 

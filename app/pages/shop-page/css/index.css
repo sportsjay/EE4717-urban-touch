@@ -57,9 +57,9 @@
 }
 
 .filter-wrapper > .global-button {
-  transition-duration: 0.2s;
   border-width: 1px;
   background-color: var(--global-color-primary-orange);
+  border-color: var(--global-color-primary-orange);
   color: var(--global-color-primary-white);
 }
 
