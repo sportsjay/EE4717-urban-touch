@@ -15,7 +15,8 @@ function getProduct(string $id)
 {
   global $conn;
 
-  $sql = "SELECT id, name, price, gender, rating, sale_status FROM product WHERE id=" . $id;
+  $sql = "SELECT id, name, price, gender, rating, sale_status, category FROM product JOIN category ON category.id=product.category_id
+    WHERE id=" . $id;
   $result = mysqli_query($conn, $sql);
 
   if (mysqli_num_rows($result) > 0) {

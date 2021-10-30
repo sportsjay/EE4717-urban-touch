@@ -10,6 +10,12 @@
   <script src="https://kit.fontawesome.com/f8c6106aef.js" crossorigin="anonymous"></script>
 
 </head>
+<?php include '../../../sql/query/get_product.php' ?>
+<?php
+$product_id = $_GET['product-id'];
+echo $product_id;
+$product = getProduct($product_id)
+?>
 
 <body>
   <!-- Navigation -->

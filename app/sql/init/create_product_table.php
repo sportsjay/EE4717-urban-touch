@@ -15,12 +15,12 @@ if (!$conn) {
 $sql = "CREATE TABLE product (
 id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY, 
 name VARCHAR(30) NOT NULL,
+brand VARCHAR(64) NOT NULL,
 price FLOAT NOT NULL,
 gender VARCHAR(50) NOT NULL,
 rating INT(6) NOT NULL DEFAULT 0,
 sale_status BOOLEAN NOT NULL DEFAULT 0,
-descriptions VARCHAR DEFAULT '',
-picture VARCHAR DEFAULT '',
+picture VARCHAR(64) DEFAULT '',
 category_id INT(6) NOT NULL 
 )";
 
