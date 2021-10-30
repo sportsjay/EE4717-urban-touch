@@ -13,7 +13,7 @@
   /* Component Configs */
   --global-color-primary-gray: #636363;
   --global-color-secondary-gray: #c4c4c4;
-  --global-color-light-gray: #f1f1f1;
+  --global-color-light-gray: #dbdbdb;
   --global-color-primary-black: #000000;
   --global-color-primary-white: #ffffff;
 
@@ -21,7 +21,7 @@
   --global-color-primary-pink: #f9f3df;
   --global-color-secondary-pink: #f5cac2;
   --global-color-primary-orange: #ed7966;
-  --global-color-secondary-orange: #ec8272;
+  --global-color-secondary-orange: #d1523f;
 
   --global-color-success: #2fe739;
   --global-color-warning: #e08c26;
@@ -105,7 +105,6 @@ body {
 
 .global-button:hover {
   color: var(--global-color-primary-orange);
-  text-decoration: underline;
 }
 
 /* animations */

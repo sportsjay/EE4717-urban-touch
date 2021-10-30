@@ -17,7 +17,28 @@
   <!-- Banner -->
   <header></header>
   <!-- Body -->
-  <div></div>
+  <div class="product-page global-content-wrapper global-flex-column-wrapper">
+    <div class="product-component global-flex-row-wrapper">
+      <div class="left-section">
+        <img src="../../../../assets/images/founder.png">
+      </div>
+      <div class="right-section global-flex-column-wrapper">
+        <span class="global-content-typography-text">Brand</span>
+        <span class="global-content-typography-subtitle">Product name</span>
+        <br>
+        <span class="global-content-typography-text">SGD$ 42.00</span>
+        <div class="description global-flex-column-wrapper">
+
+          - Short sleeve tee with brand logo
+          - Round neckline
+          - Regular fit
+          - Slip on style
+          - Cotton
+
+        </div>
+      </div>
+    </div>
+  </div>
   <!-- Footer -->
   <?php include '../../../components/footer/php/index.php' ?>
 </body>
