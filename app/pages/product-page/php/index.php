@@ -11,11 +11,6 @@
 
 </head>
 <?php include '../../../sql/query/get_product.php' ?>
-<?php
-$product_id = $_GET['product-id'];
-echo $product_id;
-$product = getProduct($product_id)
-?>
 
 <body>
   <!-- Navigation -->
@@ -29,19 +24,25 @@ $product = getProduct($product_id)
         <img src="../../../../assets/images/founder.png">
       </div>
       <div class="right-section global-flex-column-wrapper">
-        <span class="global-content-typography-text">Brand</span>
-        <span class="global-content-typography-subtitle">Product name</span>
-        <br>
-        <span class="global-content-typography-text">SGD$ 42.00</span>
-        <div class="description global-flex-column-wrapper">
+        <?php
+        $product_id = $_GET['product-id'];
+        if ($product_id) {
+          $product = getProduct($product_id);
+          foreach ($product as $_product) {
+            $prod_name =  $_product['prod_name'];
+            $price = $_product['price'];
+            $brand = $_product['brand'];
+            $cat_name = $_product['cat_name'];
+            echo "<span class='global-content-typography-text'>$brand</span>
+            <span class='global-content-typography-subtitle'>$prod_name</span>
+            <br>
+            <span class='global-content-typography-text'>SGD$ $price</span>
+           ";
+          }
+        } else
+          echo "ID not found!"
+        ?>
 
-          - Short sleeve tee with brand logo
-          - Round neckline
-          - Regular fit
-          - Slip on style
-          - Cotton
-
-        </div>
       </div>
     </div>
   </div>
