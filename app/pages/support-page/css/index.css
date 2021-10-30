@@ -44,8 +44,7 @@ tr:nth-last-of-type(2) .form-items {
 }
 
 .contact-us .global-button:hover {
-  text-decoration: underline;
-  border-color: var(--global-color-primary-white);
+  background-color: var(--global-color-secondary-orange);
 }
 
 .faq {

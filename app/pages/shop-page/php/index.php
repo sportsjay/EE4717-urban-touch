@@ -11,6 +11,7 @@
 
 </head>
 <?php include '../../../utils/connectDB.php' ?>
+<?php include '../../../components/shop-page/product-card.php' ?>
 
 <body>
   <!-- Navigation -->
@@ -82,7 +83,14 @@
       </form>
       <section class="recommendation-wrapper"></section>
     </div>
-    <div class="product-list">test
+    <div class="product-list global-flex-column-wrapper">
+      <span class="global-content-typography-subtitle">CATALOG</span>
+      <hr class="global-horizontal-line" width="50px">
+      <div class="grid-container">
+
+        <?php echo createCard("Timberland", "Outdoor Heritage Camo Logo", "Shoes", "30.00") ?>
+        <?php echo createCard("Timberland", "Outdoor Heritage Camo Logo", "Shoes", "30.00") ?>
+      </div>
     </div>
   </div>
   <!-- Footer -->

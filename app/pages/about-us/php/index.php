@@ -22,9 +22,9 @@
   <!-- Body -->
   <div class="tagline-img global-flex-column-wrapper global-content-wrapper">
     <span class="global-content-typography-title">Founded on <span
-        style="color: var(--global-color-secondary-orange);">Fit</span>. Built on <span
-        style="color: var(--global-color-secondary-orange);">Service</span>. <br>Focused on <span
-        style="color: var(--global-color-secondary-orange);">Style</span>.</span>
+        style="color: var(--global-color-primary-orange);">Fit</span>. Built on <span
+        style="color: var(--global-color-primary-orange);">Service</span>. <br>Focused on <span
+        style="color: var(--global-color-primary-orange);">Style</span>.</span>
   </div>
   <div class="about-us global-flex-column-wrapper">
     <section class="global-flex-column-wrapper global-content-wrapper">
