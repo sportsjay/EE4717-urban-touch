@@ -2,28 +2,28 @@
 $servername = "localhost";
 $username = "f32ee";
 $password = "f32ee";
+$dbname = "f32ee";
 
 // Create connection
-$conn = mysqli_connect($servername, $username, $password);
+$conn = mysqli_connect($servername, $username, $password, $dbname);
 
 // Check connection
 if (!$conn) {
   die("Connection failed: " . mysqli_connect_error());
 }
 
-function getProduct(string $id)
+function getProduct($id)
 {
   global $conn;
 
-  $sql = "SELECT id, name, price, gender, rating, sale_status, category FROM product JOIN category ON category.id=product.category_id
+  $sql = "SELECT product.id as prod_id, product.name as prod_name, price, gender, rating, sale_status, category.name as cat_name FROM product JOIN category ON category.id=product.category_id
     WHERE id=" . $id;
   $result = mysqli_query($conn, $sql);
 
-  if (mysqli_num_rows($result) > 0) {
-    // while ($row = mysqli_fetch_assoc($result)) {
-    //   echo "id: " . $row["id"] . " - Name: " . $row["firstname"] . " " . $row["lastname"] . "<br>";
-    // }
-    return mysqli_fetch_assoc($result);
+  if (mysqli_error($conn)) {
+    return mysqli_error($conn);
+  } else if (mysqli_num_rows($result) > 0) {
+    return $result;
   } else {
     return "0 results";
   }
@@ -31,38 +31,34 @@ function getProduct(string $id)
   mysqli_close($conn);
 }
 
-function getproducts(int $n)
+function getProducts($n)
 {
   global $conn;
 
-  $sql = "SELECT id, name, price, gender, rating, sale_status LIMIT " . $n . " FROM product";
+  $sql = "SELECT product.id as prod_id, product.name as prod_name, price, gender, rating, sale_status, category.name FROM product JOIN category ON category.id=product.category_id LIMIT " . $n;
   $result = mysqli_query($conn, $sql);
 
-  if (mysqli_num_rows($result) > 0) {
-    // while ($row = mysqli_fetch_assoc($result)) {
-    //   echo "id: " . $row["id"] . " - Name: " . $row["firstname"] . " " . $row["lastname"] . "<br>";
-    // }
-    return mysqli_fetch_assoc($result);
+  if (mysqli_error($conn)) {
+    return mysqli_error($conn);
+  } else if (mysqli_num_rows($result) > 0) {
+    return $result;
   } else {
     return "0 results";
   }
-
-  mysqli_close($conn);
 }
 
-function getRandomProducts(int $n)
+function getRandomProducts($n)
 {
   global $conn;
 
-  $sql = "SELECT id, name, price, gender, rating, sale_status ORDER BY RAND() LIMIT " . $n . " FROM product";
+  $sql = "SELECT product.id as prod_id, product.name as prod_name, price, gender, rating, sale_status, category.name FROM product JOIN category ON category.id=product.category_id ORDER BY RAND() LIMIT " . $n;
   $result = mysqli_query($conn, $sql);
-
-  if (mysqli_num_rows($result) > 0) {
-    // while ($row = mysqli_fetch_assoc($result)) {
-    //   echo "id: " . $row["id"] . " - Name: " . $row["firstname"] . " " . $row["lastname"] . "<br>";
-    // }
-    return mysqli_fetch_assoc($result);
+  if (mysqli_error($conn)) {
+    return mysqli_error($conn);
+  } else if (mysqli_num_rows($result) > 0) {
+    return $result;
   } else {
+
     return "0 results";
   }
 
