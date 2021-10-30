@@ -9,11 +9,13 @@
   <title>Shop</title>
   <script src="https://kit.fontawesome.com/f8c6106aef.js" crossorigin="anonymous"></script>
 
+  <?php include '../../../components/shop-page/product-card.php' ?>
+  <?php require __DIR__ . '../../../../sql/query/get_product.php' ?>
+  <?php require __DIR__ . '../../../../sql/query/filter_product.php' ?>
 </head>
-<?php include '../../../utils/connectDB.php' ?>
-<?php include '../../../components/shop-page/product-card.php' ?>
 
 <body>
+
   <!-- Navigation -->
   <?php include '../../../components/navigation/php/index.php' ?>
   <!-- Banner -->
@@ -87,9 +89,19 @@
       <span class="global-content-typography-subtitle">CATALOG</span>
       <hr class="global-horizontal-line" width="50px">
       <div class="grid-container">
+        <?php
 
-        <?php echo createCard("Timberland", "Outdoor Heritage Camo Logo", "Shoes", "30.00") ?>
-        <?php echo createCard("Timberland", "Outdoor Heritage Camo Logo", "Shoes", "30.00") ?>
+        $result = getFilteredProduct();
+        if ($result) {
+          foreach ($result as $product) {
+            echo createCard($product['prod_id'], $product['brand'], $product['prod_name'], $product['cat_name'], $product['price']);
+          }
+        } else {
+          echo "error:" . "<br>";
+          echo mysqli_error($conn);
+        }
+        ?>
+
       </div>
     </div>
   </div>

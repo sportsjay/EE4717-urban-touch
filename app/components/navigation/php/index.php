@@ -10,6 +10,7 @@
     <a href="../../../pages/about-us/php/index.php" class="global-content-typography-text"><span>About Us</span></a>
     <a href="../../../pages/support-page/php/index.php" class="global-content-typotextubtitle"><span>Support</span></a>
     <a href="" class="global-content-typotextubtitle"><span><i class="fas fa-search"></i></span></a>
-    <a href="" class="global-content-typotextubtitle"><span><i class="fas fa-shopping-cart"></i></span></a>
+    <a href="../../../pages/cart-page/php/index.php" class="global-content-typotextubtitle"><span><i
+          class="fas fa-shopping-cart"></i></span></a>
   </section>
 </nav>

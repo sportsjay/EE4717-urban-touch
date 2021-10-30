@@ -1,1 +1,17 @@
 @import "../../../global.css";
+
+.cart-page {
+  gap: 30px;
+  justify-content: space-between;
+  padding-top: 40px;
+}
+
+.cart-page > .left-section {
+  background-color: blue;
+  flex: 1;
+}
+
+.cart-page > .right-section {
+  background-color: red;
+  width: 300px;
+}

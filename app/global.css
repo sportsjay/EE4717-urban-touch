@@ -42,6 +42,11 @@ body {
   font-family: var(--global-font-family);
 }
 
+a {
+  color: unset;
+  text-decoration: none;
+}
+
 .global-content-wrapper {
   padding: 0px var(--body-padding-horizontal);
   box-sizing: border-box;

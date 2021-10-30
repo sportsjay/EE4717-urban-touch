@@ -16,7 +16,10 @@
   <!-- Banner -->
   <header></header>
   <!-- Body -->
-  <div></div>
+  <div class="cart-page global-content-wrapper global-flex-row-wrapper">
+    <div class="left-section global-flex-column-wrapper">as</div>
+    <div class="right-section global-flex-row-wrapper">as</div>
+  </div>
   <!-- Footer -->
   <?php include '../../../components/footer/php/index.php' ?>
 </body>
