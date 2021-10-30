@@ -14,6 +14,9 @@
 <body>
   <!-- Navigation -->
   <?php include '../../../components/navigation/php/index.php' ?>
+  <?php include '../../../components/home-page/product-card.php' ?>
+  <?php require __DIR__ . '../../../../sql/query/get_product.php' ?>
+
   <!-- Banner -->
   <header class="banner">
 
@@ -80,31 +83,18 @@
       <div class="global-button">View More</div>
     </div>
     <section class="global-flex-row-wrapper product-list">
-      <div class="product-wrapper hover-transition hover-animation">
-        <div class="image-container">image</div>
-        <p><strong>Product Name</strong></p>
-        <p>$100</p>
-      </div>
-      <div class="product-wrapper hover-transition hover-animation">
-        <div class="image-container">image</div>
-        <p><strong>Product Name</strong></p>
-        <p>$100</p>
-      </div>
-      <div class="product-wrapper">
-        <div class="image-container">image</div>
-        <p><strong>Product Name</strong></p>
-        <p>$100</p>
-      </div>
-      <div class="product-wrapper">
-        <div class="image-container">image</div>
-        <p><strong>Product Name</strong></p>
-        <p>$100</p>
-      </div>
-      <div class="product-wrapper">
-        <div class="image-container">image</div>
-        <p><strong>Product Name</strong></p>
-        <p>$100</p>
-      </div>
+
+      <?php
+      $result = getRandomProducts(5);
+      if ($result) {
+        foreach ($result as $product) {
+          echo createCardHome($product['prod_id'], $product['prod_name'], $product['price']);
+        }
+      } else {
+        echo "error:" . "<br>";
+        echo mysqli_error($conn);
+      }
+      ?>
     </section>
 
     <div class="global-flex-row-wrapper">
@@ -115,7 +105,21 @@
       <div class="global-button">View More</div>
     </div>
     <section class="global-flex-row-wrapper product-list">
-      <span class="num-indicator">0<br>1</span>
+      <?php
+      $result = getRandomProducts(5);
+      if ($result) {
+        $idx = 1;
+        foreach ($result as $product) {
+          echo "<span class='num-indicator'>0<br>" . $idx . "</span>";
+          echo createCardHome($product['prod_id'], $product['prod_name'], $product['price']);
+          $idx += 1;
+        }
+      } else {
+        echo "error:" . "<br>";
+        echo mysqli_error($conn);
+      }
+      ?>
+      <!-- <span class="num-indicator">0<br>1</span>
       <div class="product-wrapper">
         <div class="image-container">image</div>
         <p><strong>Product Name</strong></p>
@@ -144,7 +148,7 @@
         <div class="image-container">image</div>
         <p><strong>Product Name</strong></p>
         <p>$100</p>
-      </div>
+      </div> -->
     </section>
 
     <div class="global-flex-row-wrapper">
@@ -155,41 +159,17 @@
       <div class="global-button">View More</div>
     </div>
     <section class="global-flex-row-wrapper product-list">
-      <div class="product-wrapper">
-        <div class="image-container">image</div>
-        <p><strong>Product Name</strong></p>
-        <p>$100</p>
-      </div>
-      <div class="product-wrapper">
-        <div class="image-container">image</div>
-        <p><strong>Product Name</strong></p>
-        <p>$100</p>
-      </div>
-      <div class="product-wrapper">
-        <div class="image-container">image</div>
-        <p><strong>Product Name</strong></p>
-        <p>$100</p>
-      </div>
-      <div class="product-wrapper">
-        <div class="image-container">image</div>
-        <p><strong>Product Name</strong></p>
-        <p>$100</p>
-      </div>
-      <div class="product-wrapper">
-        <div class="image-container">image</div>
-        <p><strong>Product Name</strong></p>
-        <p>$100</p>
-      </div>
-      <div class="product-wrapper">
-        <div class="image-container">image</div>
-        <p><strong>Product Name</strong></p>
-        <p>$100</p>
-      </div>
-      <div class="product-wrapper">
-        <div class="image-container">image</div>
-        <p><strong>Product Name</strong></p>
-        <p>$100</p>
-      </div>
+      <?php
+      $result = getRandomProducts(8);
+      if ($result) {
+        foreach ($result as $product) {
+          echo createCardHome($product['prod_id'], $product['prod_name'], $product['price']);
+        }
+      } else {
+        echo "error:" . "<br>";
+        echo mysqli_error($conn);
+      }
+      ?>
     </section>
     <span class="featured-brands global-content-typography-title">FEATURED BRANDS</span>
     <hr class="global-horizontal-line" width="160px">

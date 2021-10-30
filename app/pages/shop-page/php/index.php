@@ -90,7 +90,6 @@
       <hr class="global-horizontal-line" width="50px">
       <div class="grid-container">
         <?php
-
         $result = getFilteredProduct();
         if ($result) {
           foreach ($result as $product) {
@@ -101,7 +100,6 @@
           echo mysqli_error($conn);
         }
         ?>
-
       </div>
     </div>
   </div>

@@ -1,17 +1,11 @@
 <?php
-function createComponent($id, $title, $content)
+function createCardHome($id, $name, $price)
 {
   return "
-  <div class='faq-component global-flex-column-wrapper'>
-    <div class='faq-title global-flex-row-wrapper'>
-      <span class='global-content-typography-subtitle'>$title</span>
-      <span onclick='handleClick()' id='$id' class='global-content-typography-title'
-        style='cursor:pointer; user-select:none'>&#43;</span>
-    </div>
-    <div id='content$id' style='display: none;' class='faq-content global-flex-row-wrapper'>
-      <span class='global-content-typography-text'>
-        $content</span>
-    </div>
-  </div>
+  <a href='../../../pages/product-page/php/index.php?product-id=$id' class='product-wrapper'>
+    <div class='image-container'>image</div>
+    <p class='global-content-typography-text'>$name</p>
+    <p class='global-content-typography-text'><b>SGD$ $price</b></p>
+  </a>
   ";
 }
