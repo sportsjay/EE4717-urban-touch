@@ -19,6 +19,8 @@ price FLOAT NOT NULL,
 gender VARCHAR(50) NOT NULL,
 rating INT(6) NOT NULL DEFAULT 0,
 sale_status BOOLEAN NOT NULL DEFAULT 0,
+descriptions VARCHAR DEFAULT '',
+picture VARCHAR DEFAULT '',
 category_id INT(6) NOT NULL 
 )";
 
