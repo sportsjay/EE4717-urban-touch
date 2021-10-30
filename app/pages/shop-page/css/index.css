@@ -1,24 +1,68 @@
 @import "../../../global.css";
 
 /* Body */
-.content {
+.shop-page {
   gap: 40px;
+  padding-top: 40px;
+  padding-bottom: 40px;
 }
 
 .utilities-wrapper {
-  flex: 2;
   height: 100%;
-  background-color: blueviolet;
-}
-
-.filter-wrapper {
 }
 
 .recommendation-wrapper {
 }
 
 .product-list {
-  flex: 5;
   height: 100%;
   background-color: aqua;
+}
+
+/* Filter */
+
+.filter-wrapper {
+  background-color: var(--global-color-primary-pink);
+  padding: 30px;
+  border-radius: 10px;
+  justify-content: start;
+}
+
+.filter-wrapper > hr {
+  border-width: 1px;
+  margin-bottom: 15px;
+}
+
+.filter-wrapper > .form-items {
+  margin: 5px 0 5px;
+  margin-left: 15px;
+  gap: 5px;
+}
+
+.filter-wrapper > .form-subtitle {
+  margin-bottom: 3px;
+}
+
+.filter-wrapper > .form-items:nth-of-type(1),
+.filter-wrapper > .form-items:nth-of-type(2) {
+  justify-content: space-between;
+}
+
+.filter-wrapper > .form-items > label {
+  align-self: center;
+}
+
+.form-items > input[type="text"] {
+  /* width: 100px !important; */
+}
+
+.filter-wrapper > .global-button {
+  border-width: 1px;
+  background-color: var(--global-color-primary-orange);
+  border-color: var(--global-color-primary-orange);
+  color: var(--global-color-primary-white);
+}
+
+.filter-wrapper > .global-button:hover {
+  text-decoration: underline;
 }
