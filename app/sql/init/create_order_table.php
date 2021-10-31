@@ -15,6 +15,7 @@ if (!$conn) {
 $sql = "CREATE TABLE orders (
 id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY, 
 order_code VARCHAR(30) NOT NULL,
+customer_id INT(6) NOT NULL,
 order_status VARCHAR(30) DEFAULT 'Pending'
 )";
 

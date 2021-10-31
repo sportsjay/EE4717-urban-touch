@@ -143,7 +143,22 @@ header.banner {
   margin-bottom: 0px;
 }
 
-.home > div > div > .global-button {
+.product-wrapper.hover-transition {
+  transition: ease-out 0.3s;
+}
+
+.product-list:nth-of-type(1) > .product-wrapper.hover-animation:hover {
+  transform: none;
+  text-decoration: underline;
+}
+
+.product-list:nth-of-type(2) > .product-wrapper.hover-animation:hover {
+  box-shadow: 0px 0px 6px 3px var(--global-color-primary-orange);
+  transform: none;
+}
+
+.home .global-button:hover {
+  text-decoration: underline;
 }
 
 .product-list {
@@ -155,10 +170,10 @@ header.banner {
 }
 
 .product-wrapper {
-  padding: 15px;
+  padding: 20px 15px;
   box-sizing: border-box;
   border: 1px solid var(--global-color-primary-text);
-  box-shadow: 1px 1px 4px 2px rgba(0, 0, 0, 0.253);
+  box-shadow: 2px 2px 4px 2px rgba(0, 0, 0, 0.253);
   background-color: var(--global-color-primary-white);
 }
 

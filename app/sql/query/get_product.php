@@ -110,3 +110,30 @@ function getRandomProductByBrand($n = 3, $brand = "")
 
   mysqli_close($conn);
 }
+
+/**
+ * ### Get n-number of random products by brand
+ * 
+ * @param string $n 
+ * @param string $brand
+ * @return string[]|string|null|false
+ */
+function getSaleProducts($n)
+{
+  global $conn;
+
+  $sql = "SELECT product.id as prod_id, product.name as prod_name, price, gender, rating, sale_status, category.name as cat_name FROM product JOIN category ON category.id=product.category_id WHERE sale_status=TRUE";
+  $sql .=  " ORDER BY RAND() LIMIT " . $n;
+
+  $result = mysqli_query($conn, $sql);
+  if (mysqli_error($conn)) {
+    return mysqli_error($conn);
+  } else if (mysqli_num_rows($result) > 0) {
+    return $result;
+  } else {
+
+    return "0 results";
+  }
+
+  mysqli_close($conn);
+}

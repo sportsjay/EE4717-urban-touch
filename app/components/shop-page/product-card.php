@@ -12,7 +12,7 @@ global-flex-column-wrapper'>
       <span class='global-content-typography-subtext'>$name</span>
       <div class='lower-section global-flex-row-wrapper'>
         <span class=' global-content-typography-subtext'>$category</span>
-        <span class='global-content-typography-subtext'><b>SGD$ $price</b></span>
+        <span class='global-content-typography-subtext'><b>S$ $price</b></span>
       </div>
     </div>
   </div>

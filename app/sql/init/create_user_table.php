@@ -12,20 +12,15 @@ if (!$conn) {
 }
 
 // sql to create table
-$sql = "CREATE TABLE product (
+$sql = "CREATE TABLE users (
 id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY, 
-name VARCHAR(100) NOT NULL,
-brand VARCHAR(64) NOT NULL,
-price FLOAT NOT NULL,
-gender VARCHAR(50) NOT NULL,
-rating INT(6) NOT NULL DEFAULT 0,
-sale_status BOOLEAN NOT NULL DEFAULT 0,
-picture VARCHAR(64) DEFAULT '',
-category_id INT(6) NOT NULL 
+order VARCHAR(30) NOT NULL,
+username VARCHAR(30) NOT NULL,
+password VARCHAR(30) NOT NULL
 )";
 
 if (mysqli_query($conn, $sql)) {
-  echo "Table Product created successfully";
+  echo "Table order created successfully";
 } else {
   echo "Error creating table: " . mysqli_error($conn);
 }

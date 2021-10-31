@@ -85,7 +85,7 @@
     <section class="global-flex-row-wrapper product-list">
 
       <?php
-      $result = getRandomProducts(5);
+      $result = getSaleProducts(5);
       if ($result) {
         foreach ($result as $product) {
           echo createCardHome($product['prod_id'], $product['prod_name'], $product['price']);
