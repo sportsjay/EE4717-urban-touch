@@ -155,15 +155,21 @@ header.banner {
 }
 
 .product-wrapper {
-  padding: 10px;
+  padding: 15px;
   box-sizing: border-box;
   border: 1px solid var(--global-color-primary-text);
   box-shadow: 1px 1px 4px 2px rgba(0, 0, 0, 0.253);
   background-color: var(--global-color-primary-white);
 }
 
+.product-wrapper > .card-content {
+  flex: 1;
+  justify-content: space-between;
+  gap: 10px;
+}
+
 .product-wrapper > .image-container {
-  height: 160px;
+  height: 180px;
   width: 240px;
 }
 
@@ -175,6 +181,10 @@ header.banner {
   padding: 25px;
   border-right: none;
   box-shadow: none;
+}
+
+.product-list:nth-of-type(2) > .product-wrapper {
+  padding: 20px;
 }
 
 .product-list:nth-of-type(1) > .product-wrapper:nth-last-of-type(1) {
@@ -201,7 +211,7 @@ header.banner {
 
 .product-list:nth-of-type(3) > .product-wrapper > .image-container {
   width: 200px;
-  height: 120px;
+  height: 140px;
 }
 
 .featured-brands {

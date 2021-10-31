@@ -5,7 +5,7 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" type="text/css" href="../css/index.css" />
+  <link rel="stylesheet" href="../css/index.css" />
   <title>Home</title>
   <script src="https://kit.fontawesome.com/f8c6106aef.js" crossorigin="anonymous"></script>
   <script src="../script/index.js"></script>
@@ -119,36 +119,6 @@
         echo mysqli_error($conn);
       }
       ?>
-      <!-- <span class="num-indicator">0<br>1</span>
-      <div class="product-wrapper">
-        <div class="image-container">image</div>
-        <p><strong>Product Name</strong></p>
-        <p>$100</p>
-      </div>
-      <span class="num-indicator">0<br>2</span>
-      <div class="product-wrapper">
-        <div class="image-container">image</div>
-        <p><strong>Product Name</strong></p>
-        <p>$100</p>
-      </div>
-      <span class="num-indicator">0<br>3</span>
-      <div class="product-wrapper">
-        <div class="image-container">image</div>
-        <p><strong>Product Name</strong></p>
-        <p>$100</p>
-      </div>
-      <span class="num-indicator">0<br>4</span>
-      <div class="product-wrapper">
-        <div class="image-container">image</div>
-        <p><strong>Product Name</strong></p>
-        <p>$100</p>
-      </div>
-      <span class="num-indicator">0<br>5</span>
-      <div class="product-wrapper">
-        <div class="image-container">image</div>
-        <p><strong>Product Name</strong></p>
-        <p>$100</p>
-      </div> -->
     </section>
 
     <div class="global-flex-row-wrapper">

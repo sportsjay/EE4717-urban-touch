@@ -9,6 +9,8 @@
 
 .utilities-wrapper {
   height: 100%;
+  position: sticky;
+  top: calc(var(--navbar-height) + 20px);
 }
 
 .recommendation-wrapper {

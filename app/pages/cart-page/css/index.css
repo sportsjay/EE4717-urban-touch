@@ -3,15 +3,82 @@
 .cart-page {
   gap: 30px;
   justify-content: space-between;
-  padding-top: 40px;
+  padding-top: 60px;
+  padding-bottom: 60px;
+  background-color: var(--global-color-light-gray);
 }
 
 .cart-page > .left-section {
-  background-color: blue;
+  background-color: var(--global-color-primary-white);
   flex: 1;
+  padding: 30px 40px;
+  text-align: left;
+  border-radius: 10px;
 }
 
 .cart-page > .right-section {
-  background-color: red;
-  width: 300px;
+  background-color: var(--global-color-primary-white);
+  width: 350px;
+  padding: 30px;
+  height: fit-content;
+  border-radius: 10px;
+  position: sticky;
+  top: calc(var(--navbar-height) + 20px);
+}
+
+.order-wrapper {
+  gap: 20px;
+  padding: 25px 0;
+}
+
+.order-wrapper > .product-img {
+  width: 120px;
+  height: 140px;
+}
+
+.detail-wrapper {
+  gap: 5px;
+}
+
+.order-wrapper > .delete-button {
+  width: 50px;
+  cursor: pointer;
+  text-align: center;
+}
+
+.order-wrapper .bottom-section {
+  gap: 8px;
+}
+
+.bottom-section > span,
+.bottom-section > label {
+  margin: auto 0;
+}
+
+.order-container > .separator-line {
+  border-width: 1px;
+}
+
+.order-container > .separator-line:last-of-type {
+  display: none;
+}
+
+.right-section > table td {
+  padding: 7px 0px;
+}
+
+.right-section > table td:nth-of-type(2) {
+  text-align: right;
+}
+
+.right-section > .global-button {
+  padding: 5px unset;
+  border-width: 1px;
+  background-color: var(--global-color-primary-orange);
+  border-color: var(--global-color-primary-orange);
+  color: var(--global-color-primary-white);
+}
+
+.right-section > .global-button:hover {
+  background-color: var(--global-color-secondary-orange);
 }

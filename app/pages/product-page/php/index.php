@@ -42,6 +42,7 @@
         } else
           echo "ID not found!"
         ?>
+        <?php echo "<span class='global-content-typography-text'>$brand</span>"; ?>
 
       </div>
     </div>

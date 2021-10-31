@@ -43,7 +43,7 @@ function getFilteredProduct()
   }
 
 
-  $sql = "SELECT product.id as prod_id, product.name as prod_name, price, gender, rating, sale_status, category.name as cat_name FROM product " . $filterQuery . ";";
+  $sql = "SELECT product.id as prod_id, product.name as prod_name, brand, price, gender, rating, sale_status, category.name as cat_name FROM product " . $filterQuery . ";";
   $result = mysqli_query($conn, $sql);
 
   if (mysqli_num_rows($result) > 0) {

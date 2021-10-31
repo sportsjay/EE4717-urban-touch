@@ -1,0 +1,30 @@
+<?php
+function createOrderCard($id, $name, $brand, $category, $price)
+{
+  return "
+  <div id='order$id' class='order-wrapper global-flex-row-wrapper'>
+    <div class='product-img'>image</div>
+    <div class='detail-wrapper global-flex-column-wrapper' style='flex:1'>
+      <span class='global-content-typography-text'><b>SGD$ $price</b></span>
+      <span class='global-content-typography-text'>$brand - $name</span>
+      <br>
+      <div class='global-flex-row-wrapper bottom-section'>
+        <span class='global-content-typography-subtext'>Category:</span>
+        <span class='global-content-typography-subtext'>$category</span>
+        <br>
+        <span class='global-content-typography-subtext'>&#65372;</span>
+        <br>
+        <label class='global-content-typography-subtext' for='quantity'>Quantity:</label>
+        <select id='quantity'>
+          <option value='1'>1</option>
+          <option value='2'>2</option>
+          <option value='3'>3</option>
+          <option value='4'>4</option>
+        </select>
+      </div>
+    </div>
+    <a onclick='deleteEntry($id)' class='delete-button'>&#9587;</a>
+  </div>
+  <hr id='separator$id' class='global-horizontal-line separator-line' width='100%'>
+  ";
+}
