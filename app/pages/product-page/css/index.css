@@ -1,39 +1,46 @@
 @import "../../../global.css";
 
 .product-page {
-  padding-top: 80px;
-  padding-bottom: 120px;
+  /* padding-top: 80px;
+  padding-bottom: 120px; */
+  padding: 50px 20% 120px;
   gap: 80px;
 }
 
 .product-page > .product-wrapper {
-  gap: 50px;
+  gap: 6%;
   text-align: center;
 }
 
 .left-section > img {
-  height: 60vh;
-  width: 48vw;
+  height: 78vh;
+  width: 32vw;
   object-fit: cover;
-  object-position: top;
-  border: 1px solid var(--global-color-light-gray);
+  object-position: center;
+  border: 1px solid var(--global-color-secondary-gray);
 }
 
 .right-section {
   text-align: left;
-  width: fit-content;
+  width: 100%;
   gap: 3px;
 }
 
 .add-to-cart-btn {
   border-width: 1px;
+  width: 100%;
   background-color: var(--global-color-primary-orange);
   border-color: var(--global-color-primary-orange);
   color: var(--global-color-primary-white);
 }
 
+.add-to-cart-btn:disabled:hover {
+  background-color: var(--global-color-primary-orange);
+}
+
 .add-to-cart-btn:hover {
   background-color: var(--global-color-secondary-orange);
+  color: white;
 }
 
 .right-section > .price-before-sale {
@@ -53,21 +60,34 @@
   padding: 15px;
   width: 30%;
   box-sizing: border-box;
-  border: 1px solid var(--global-color-primary-text);
-  box-shadow: 1px 1px 4px 2px rgba(0, 0, 0, 0.253);
+  border: 1px solid var(--global-color-secondary-gray);
+  box-shadow: 1px 1px 4px 2px var(--global-color-light-gray);
   background-color: var(--global-color-primary-white);
   text-align: left;
+}
+
+.items-wrapper > .product-wrapper:hover {
+  border-color: var(--global-color-primary-orange);
+  box-shadow: 1px 1px 4px 2px var(--global-color-primary-orange);
 }
 
 .items-wrapper > .product-wrapper > .card-content {
   flex: 1;
   justify-content: space-between;
-  gap: 10px;
+  gap: 7px;
 }
 
 .items-wrapper > .product-wrapper > .image-container {
-  height: 180px;
-  width: 240px;
+  height: 240px;
+  margin-bottom: 15px;
+  width: 100%;
+}
+
+.items-wrapper > .product-wrapper > .image-container > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
 }
 
 .items-wrapper {
@@ -76,5 +96,21 @@
   gap: 5%;
 }
 
-.add-to-cart-btn {
+.stars {
+  --percent: calc(var(--rating) / 10 * 100%);
+  display: inline-block;
+  font-size: 40px;
+  font-family: Times;
+  line-height: 1;
+}
+.stars::before {
+  content: "★★★★★";
+  letter-spacing: 3px;
+  background: linear-gradient(
+    90deg,
+    var(--global-color-primary-orange) var(--percent),
+    var(--global-color-light-gray) var(--percent)
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }

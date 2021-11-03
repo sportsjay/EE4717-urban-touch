@@ -109,6 +109,11 @@ a {
   font-size: 1.05rem; /* same size as text */
 }
 
+.global-button:disabled {
+  opacity: 0.8;
+  cursor: initial;
+}
+
 .global-button:hover {
   color: var(--global-color-primary-orange);
 }

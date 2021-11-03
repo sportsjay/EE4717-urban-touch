@@ -54,7 +54,7 @@
           <span class="global-content-typography-text">Total Product Price</span>
         </td>
         <td>
-          <span class="global-content-typography-text"><b id="total_prod_price">S$ 0</b></span>
+          <span class="global-content-typography-text"><b id="total_prod_price">SGD 0</b></span>
         </td>
         </tr>
         <tr>
@@ -62,7 +62,7 @@
             <span class="global-content-typography-text">Delivery Fee</span>
           </td>
           <td>
-            <span class="global-content-typography-text"><b>S$ 12.00</b></span>
+            <span class="global-content-typography-text"><b>SGD 12.00</b></span>
           </td>
         </tr>
         <tr>
@@ -70,7 +70,7 @@
             <span class="global-content-typography-text">Tax (7% GST)</span>
           </td>
           <td>
-            <span class="global-content-typography-text"><b id="gst_price">S$ 0</b></span>
+            <span class="global-content-typography-text"><b id="gst_price">SGD 0</b></span>
           </td>
         </tr>
         <tr>
@@ -84,7 +84,7 @@
             </span>
           </td>
           <td>
-            <span class="global-content-typography-text"><b id="grand_total">S$ 228</b></span>
+            <span class="global-content-typography-text"><b id="grand_total">SGD 228</b></span>
           </td>
         </tr>
       </table>
@@ -129,10 +129,15 @@
     for (let idx = 1; idx < <?php echo count($_SESSION['product_id'])  ?>; idx++) {
       totalPrice += parseInt(document.getElementById(`price${idx}`).innerHTML)
     }
-    document.getElementById('total_prod_price').innerHTML = `S$ ${parseFloat(totalPrice).toFixed(2)}`;
-    document.getElementById('gst_price').innerHTML = `S$ ${parseFloat(totalPrice*0.07).toFixed(2)}`;
+    document.getElementById('total_prod_price').innerHTML = `SGD ${parseFloat(totalPrice).toFixed(2)}`;
+    document.getElementById('gst_price').innerHTML = `SGD ${parseFloat(totalPrice*0.07).toFixed(2)}`;
     document.getElementById('grand_total').innerHTML =
-      `S$ ${parseFloat(totalPrice + totalPrice*0.07 + 12).toFixed(2)}`;
+      `SGD ${parseFloat(totalPrice + totalPrice*0.07 + 12).toFixed(2)}`;
+  }
+
+  // prevent form re-submission popup
+  if (window.history.replaceState) {
+    window.history.replaceState(null, null, window.location.href);
   }
   </script>
 </body>

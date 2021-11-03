@@ -80,7 +80,6 @@
         <span class="global-content-typography-title">SEASONAL SALE</span>
         <hr class="global-horizontal-line" width="150px">
       </div>
-      <div class="global-button">View More</div>
     </div>
     <section class="global-flex-row-wrapper product-list">
 
@@ -88,7 +87,7 @@
       $result = getSaleProducts(5);
       if ($result) {
         foreach ($result as $product) {
-          echo createCardHome($product['prod_id'], $product['prod_name'], $product['price']);
+          echo createCardHome($product['prod_id'], $product['brand'], $product['prod_name'], $product['price']);
         }
       } else {
         echo "error:" . "<br>";
@@ -102,7 +101,6 @@
         <span class="global-content-typography-title">MOST POPULAR</span>
         <hr class="global-horizontal-line" width="150px">
       </div>
-      <div class="global-button">View More</div>
     </div>
     <section class="global-flex-row-wrapper product-list">
       <?php
@@ -111,7 +109,7 @@
         $idx = 1;
         foreach ($result as $product) {
           echo "<span class='num-indicator'>0<br>" . $idx . "</span>";
-          echo createCardHome($product['prod_id'], $product['prod_name'], $product['price']);
+          echo createCardHome($product['prod_id'], $product['brand'], $product['prod_name'], $product['price']);
           $idx += 1;
         }
       } else {
@@ -126,14 +124,13 @@
         <span class="global-content-typography-title">UNDER RETAIL</span>
         <hr class="global-horizontal-line" width="150px">
       </div>
-      <div class="global-button">View More</div>
     </div>
     <section class="global-flex-row-wrapper product-list">
       <?php
       $result = getRandomProducts(8);
       if ($result) {
         foreach ($result as $product) {
-          echo createCardHome($product['prod_id'], $product['prod_name'], $product['price']);
+          echo createCardHome($product['prod_id'], $product['brand'], $product['prod_name'], $product['price']);
         }
       } else {
         echo "error:" . "<br>";

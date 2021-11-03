@@ -47,7 +47,7 @@ function getProducts($n)
 {
   global $conn;
 
-  $sql = "SELECT product.id as prod_id, product.name as prod_name, price, gender, rating, sale_status, category.name as cat_name FROM product JOIN category ON category.id=product.category_id LIMIT " . $n;
+  $sql = "SELECT product.id as prod_id, product.name as prod_name, price, gender, rating, brand, sale_status, category.name as cat_name FROM product JOIN category ON category.id=product.category_id LIMIT " . $n;
   $result = mysqli_query($conn, $sql);
 
   if (mysqli_error($conn)) {
@@ -69,7 +69,7 @@ function getRandomProducts($n)
 {
   global $conn;
 
-  $sql = "SELECT product.id as prod_id, product.name as prod_name, price, gender, rating, sale_status, category.name as cat_name FROM product JOIN category ON category.id=product.category_id ORDER BY RAND() LIMIT " . $n;
+  $sql = "SELECT product.id as prod_id, product.name as prod_name, price, gender, brand, rating, sale_status, category.name as cat_name FROM product JOIN category ON category.id=product.category_id ORDER BY RAND() LIMIT " . $n;
   $result = mysqli_query($conn, $sql);
   if (mysqli_error($conn)) {
     return mysqli_error($conn);
@@ -94,7 +94,7 @@ function getRandomProductByBrand($n = 3, $brand = "")
 {
   global $conn;
 
-  $sql = "SELECT product.id as prod_id, product.name as prod_name, price, gender, rating, sale_status, category.name as cat_name FROM product JOIN category ON category.id=product.category_id";
+  $sql = "SELECT product.id as prod_id, product.name as prod_name, price, gender, brand, rating, sale_status, category.name as cat_name FROM product JOIN category ON category.id=product.category_id";
   if ($brand) $sql .= " WHERE brand=" . "'" . $brand . "'";
   $sql .=  " ORDER BY RAND() LIMIT " . $n;
 
@@ -122,7 +122,7 @@ function getSaleProducts($n)
 {
   global $conn;
 
-  $sql = "SELECT product.id as prod_id, product.name as prod_name, price, gender, rating, sale_status, category.name as cat_name FROM product JOIN category ON category.id=product.category_id WHERE sale_status=TRUE";
+  $sql = "SELECT product.id as prod_id, product.name as prod_name, price, brand, gender, rating, sale_status, category.name as cat_name FROM product JOIN category ON category.id=product.category_id WHERE sale_status=TRUE";
   $sql .=  " ORDER BY RAND() LIMIT " . $n;
 
   $result = mysqli_query($conn, $sql);

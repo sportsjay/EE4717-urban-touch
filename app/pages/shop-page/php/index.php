@@ -15,7 +15,6 @@
 </head>
 
 <body>
-
   <!-- Navigation -->
   <?php include '../../../components/navigation/php/index.php' ?>
   <!-- Banner -->
@@ -23,7 +22,7 @@
   <!-- Body -->
   <div class="shop-page global-flex-row-wrapper global-padding-horizontal">
     <div class="utilities-wrapper global-flex-column-wrapper">
-      <form action="" method="POST" onsubmit="return validateForm()">
+      <form id="filter-form" action="" method="POST" onsubmit="return validateForm()">
         <section class="filter-wrapper global-flex-column-wrapper">
 
           <span class="global-content-typography-subtitle">FILTER</span>
@@ -80,7 +79,7 @@
             style="color: var(--global-color-danger); display:none;">&#10060; Price
             must be in digits</span>
           <br>
-          <input type="submit" name="SUBMIT" value="APPLY" class="global-button">
+          <input onclick="displayResultsNum()" type="submit" name="SUBMIT" value="APPLY" class="global-button">
         </section>
       </form>
       <section class="recommendation-wrapper"></section>
@@ -88,9 +87,18 @@
     <div class="product-list global-flex-column-wrapper">
       <span class="global-content-typography-subtitle">CATALOG</span>
       <hr class="global-horizontal-line" width="50px">
+      <?php
+      $result = getFilteredProduct();
+      $index = 0;
+      if ($result) {
+        foreach ($result as $product)
+          $index++;
+      }
+      ?>
+      <span id="results-num" style="margin-bottom:10px; text-align:left; margin-left:10px;"
+        class="global-content-typography-subtext"><?php echo "Total " . $index . " result(s)" ?></span>
       <div class="grid-container">
         <?php
-        $result = getFilteredProduct();
         if ($result) {
           foreach ($result as $product) {
             echo createCard($product['prod_id'], $product['brand'], $product['prod_name'], $product['cat_name'], $product['price']);
@@ -145,6 +153,11 @@
       return false;
     }
     return true;
+  }
+
+  // prevent form re - submission popup
+  if (window.history.replaceState) {
+    window.history.replaceState(null, null, window.location.href);
   }
   </script>
 </body>
