@@ -87,6 +87,7 @@ if ($added_product_id > 0) {
     <div class="recommendation-items global-flex-column-wrapper">
       <span class="global-content-typography-subtitle">PRODUCTS YOU MIGHT ALSO LIKE</span>
       <hr class="global-horizontal-line" width="170px">
+
       <span class="items-wrapper global-flex-row-wrapper">
         <?php
         $result = getRandomProductByBrand(3, $brand);
@@ -97,6 +98,19 @@ if ($added_product_id > 0) {
         }
         ?>
       </span>
+      <br>
+      <div class="reload-btn global-flex-row-wrapper">
+        <a class="hover-for-popup global-content-typography-title" href="../../shop-page/php/index.php"
+          style="cursor:pointer; ">&#129060;</a>
+        <span class="global-content-typography-subtext popup-dialog-box">Go back to our shop</span>
+        <a class="hover-for-popup global-content-typography-title" onclick="location.reload()"
+          style="cursor:pointer; ">&#10227;</a>
+        <span class="popup-dialog-box global-content-typography-subtext popup-dialog-box">Refresh recommended
+          products</span>
+        <a class="hover-for-popup global-content-typography-title" href="../../home/php/index.php"
+          style="cursor:pointer; "><i class="fas fa-home"></i></a>
+        <span class="popup-dialog-box global-content-typography-subtext popup-dialog-box">Go to home</span>
+      </div>
     </div>
   </div>
   <!-- Footer -->

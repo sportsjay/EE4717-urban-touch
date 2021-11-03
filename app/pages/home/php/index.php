@@ -77,7 +77,12 @@
   <div class="home content global-flex-column-wrapper global-padding-horizontal">
     <div class="global-flex-row-wrapper">
       <div class="global-flex-column-wrapper">
-        <span class="global-content-typography-title">SEASONAL SALE</span>
+        <div style="position:relative;" class="global-flex-row-wrapper">
+          <span class="global-content-typography-title">SEASONAL SALE</span>
+          <i class="hover-for-popup global-content-typography-subtitle fas fa-question-circle"></i>
+          <span class="popup-dialog-box global-content-typography-subtext">These are products currently
+            on Winter Sale, up to 50% off.</span>
+        </div>
         <hr class="global-horizontal-line" width="150px">
       </div>
     </div>
@@ -97,9 +102,11 @@
     </section>
 
     <div class="global-flex-row-wrapper">
-      <div class="global-flex-column-wrapper">
+      <div style="position:relative;" class="global-flex-row-wrapper">
         <span class="global-content-typography-title">MOST POPULAR</span>
-        <hr class="global-horizontal-line" width="150px">
+        <i class="hover-for-popup global-content-typography-subtitle fas fa-question-circle"></i>
+        <span class="popup-dialog-box global-content-typography-subtext">These are curated collection
+          of our best selling items.</span>
       </div>
     </div>
     <section class="global-flex-row-wrapper product-list">
@@ -120,9 +127,11 @@
     </section>
 
     <div class="global-flex-row-wrapper">
-      <div class="global-flex-column-wrapper">
+      <div style="position:relative;" class="global-flex-row-wrapper">
         <span class="global-content-typography-title">UNDER RETAIL</span>
-        <hr class="global-horizontal-line" width="150px">
+        <i class="hover-for-popup global-content-typography-subtitle fas fa-question-circle"></i>
+        <span class="popup-dialog-box global-content-typography-subtext">These are products currently
+          listed cheaper than their original price.</span>
       </div>
     </div>
     <section class="global-flex-row-wrapper product-list">

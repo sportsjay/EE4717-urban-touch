@@ -20,8 +20,8 @@
   <!-- Body -->
   <div class="cart-page global-content-wrapper global-flex-row-wrapper">
     <div class="left-section global-flex-column-wrapper">
-      <span class="global-content-typography-title">MY CART</span>
-      <hr class="global-horizontal-line" width="100px" style="margin-left: 0;">
+      <span class="global-content-typography-title">MY SHOPPING CART</span>
+      <hr class="global-horizontal-line" width="230px" style="margin-left: 0;">
       <br>
       <div class="order-container global-flex-column-wrapper">
         <?php
