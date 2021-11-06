@@ -9,7 +9,7 @@
   <title>About Us</title>
   <script src="https://kit.fontawesome.com/f8c6106aef.js" crossorigin="anonymous"></script>
 </head>
-<?php include '../../../utils/connectDB.php' ?>
+<?php include '../../../sql/query/get_product.php' ?>
 
 <body>
   <!-- Navigation -->

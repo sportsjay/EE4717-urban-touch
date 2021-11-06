@@ -8,12 +8,12 @@
   <link rel="stylesheet" href="../css/index.css" />
   <title>Cart</title>
   <script src="https://kit.fontawesome.com/f8c6106aef.js" crossorigin="anonymous"></script>
+  <?php include '../../../sql/query/get_product.php' ?>
 </head>
 
 <body>
   <!-- Navigation -->
   <?php include '../../../components/navigation/php/index.php' ?>
-  <?php include '../../../sql/query/get_product.php' ?>
   <?php include '../../../components/cart-page/order-wrapper.php' ?>
   <!-- Banner -->
   <header></header>
