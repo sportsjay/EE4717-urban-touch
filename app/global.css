@@ -5,6 +5,7 @@
   --root-margin: 0;
   --root-padding: 0;
   --navbar-height: 80px;
+  --panel-width: 30vw;
 
   /* desktop */
   --body-padding-horizontal: 120px;
@@ -118,6 +119,26 @@ a {
   color: var(--global-color-primary-orange);
 }
 
+.global-button-secondary {
+  color: var(--global-color-primary-text);
+  padding: 4px 6px;
+  box-sizing: border-box;
+  border-radius: 4px;
+  text-align: center;
+  border: 2px solid var(--global-color-primary-text);
+  cursor: pointer;
+  font-size: 0.85rem;
+}
+
+.global-button-secondary:disabled {
+  opacity: 0.8;
+  cursor: initial;
+}
+
+.global-button-secondary:hover {
+  color: var(--global-color-primary-orange);
+}
+
 /* animations */
 .hover-transition {
   transition: ease-out 0.2s;
@@ -190,6 +211,35 @@ nav > section > a {
 
 nav > section > a:hover {
   color: var(--global-color-primary-orange) !important;
+}
+
+.search-panel-wrapper {
+  position: absolute;
+  top: 0;
+}
+
+.search-panel {
+  position: fixed;
+  top: var(--navbar-height);
+  left: calc(100vw - var(--panel-width));
+  width: var(--panel-width);
+  height: calc(100vh - var(--navbar-height));
+  z-index: 100;
+  background-color: green;
+  transition: ease-out 0.2s;
+  box-sizing: border-box;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 10px;
+}
+
+.search-panel__header {
+  align-items: center;
+  gap: 20px;
+}
+
+.search-panel__close-btn {
+  cursor: pointer;
 }
 
 /* =========================== Footer =============================== */

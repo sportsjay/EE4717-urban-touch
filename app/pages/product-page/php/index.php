@@ -89,7 +89,7 @@ if ($added_product_id > 0) {
       <hr class="global-horizontal-line" width="170px">
       <span class="items-wrapper global-flex-row-wrapper">
         <?php
-        $result = getRandomProductByBrand(3, $brand);
+        $result = getRandomProductByBrand(3, $cat_name);
         if ($result) {
           foreach ($result as $product) {
             echo createCardHome($product['prod_id'], $product['brand'], $product['prod_name'], $product['price']);
