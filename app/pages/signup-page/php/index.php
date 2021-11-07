@@ -80,7 +80,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       // Attempt to execute the prepared statement
       if (mysqli_stmt_execute($stmt)) {
         // Redirect to login page
-        header("location: ../../login-page/php/index.php");
+        header("location: ../../login-page/php/index.php?from=signup-page");
       } else {
         echo "Oops! Something went wrong. Please try again later.";
       }
@@ -104,6 +104,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="../css/index.css" />
   <title>Sign Up</title>
+  <link rel="shortcut icon" type="image/x-icon" href="../../../../assets/images/favicon.png">
   <script src="https://kit.fontawesome.com/f8c6106aef.js" crossorigin="anonymous"></script>
 </head>
 

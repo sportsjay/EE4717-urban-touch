@@ -7,6 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="../css/index.css" />
   <title>About Us</title>
+  <link rel="shortcut icon" type="image/x-icon" href="../../../../assets/images/favicon.png">
   <script src="https://kit.fontawesome.com/f8c6106aef.js" crossorigin="anonymous"></script>
 </head>
 <?php include '../../../sql/query/get_product.php' ?>
@@ -35,7 +36,7 @@
         augue at mi sodales semper. Aliquam blandit enim vel an
       </span>
     </section>
-    <section class=" global-content-wrapper">
+    <section id="our-founders" class=" global-content-wrapper">
       <div class="global-flex-row-wrapper">
         <img src="../../../../assets/images/founder.png" width="350px" height="auto" />
         <div class="global-flex-column-wrapper">
@@ -49,7 +50,7 @@
         </div>
       </div>
     </section>
-    <section class="global-flex-row-wrapper global-content-wrapper">
+    <section id="our-location" class="global-flex-row-wrapper global-content-wrapper">
       <div class="global-flex-column-wrapper">
         <header class="global-content-typography-title">FIND US ON</header>
         <hr class="global-horizontal-line" width="110px">
@@ -73,7 +74,6 @@
         src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDqkx_xHFEJAl3tVpoXVQfgyuXLPdOSN9o&q=20+Nanyang+Avenue"
         allowfullscreen>
       </iframe>
-      <!-- <img src="../../../../assets/images/testimg1.jpg" width="300px" height="300px" /> -->
     </section>
 
   </div>

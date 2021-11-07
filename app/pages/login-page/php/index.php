@@ -2,7 +2,7 @@
 // Initialize the session
 session_start();
 
-// Check if the user is already logged in, if yes then redirect him to welcome page
+// Check if the user is already logged in, if yes then redirect him to home page
 if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) {
   header("location: ../../home/php/index.php");
   exit;
@@ -67,7 +67,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
               $_SESSION["username"] = $username;
 
               // Redirect user to welcome page
-              header("location: ../../shop-page/php/index.php");
+              header("location: ../../home/php/index.php?from=login-page");
             } else {
               // Password is not valid, display a generic error message
               $login_err = "Invalid username or password";
@@ -100,13 +100,24 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="../css/index.css" />
   <title>Login</title>
-  <script src="https://kit.fontawesome.com/f8c6106aef.js" crossorigin="anonymous"></script>
+  <link rel="shortcut icon" type="image/x-icon" href="../../../../assets/images/favicon.png">
+  <script src="https://kit.fontawesome.com/f8c6106aef.js" crossorigin="anonymous">
+  </script>
 </head>
 
 <body>
   <!-- Navigation -->
   <?php include '../../../components/navigation/php/index.php' ?>
   <header class="login-page global-content-wrapper  global-flex-column-wrapper">
+    <?php
+    if (count($_GET['from']) != 0) {
+      if ($_GET['from'] == "product-page") {
+        echo '<span style="margin-bottom: 40px; color:var(--global-color-danger);" class="global-content-typography-subtitle"><i class="fas fa-exclamation-circle"></i> You need to be logged in to add products into cart!</span>';
+      } elseif ($_GET['from'] == "signup-page") {
+        echo '<span style="margin-bottom: 40px; color:var(--global-color-success);" class="global-content-typography-subtitle"><i class="fas fa-exclamation-circle"></i> New user registered successfully!</span>';
+      }
+    }
+    ?>
     <span class="global-content-typography-title">LOG IN</span>
     <hr class="global-horizontal-line" width="80px">
   </header>

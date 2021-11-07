@@ -25,7 +25,7 @@
   --global-color-primary-orange: #ed7966;
   --global-color-secondary-orange: #d1523f;
 
-  --global-color-success: #2fe739;
+  --global-color-success: #41c548;
   --global-color-warning: #e08c26;
   --global-color-danger: #ff0000;
 
@@ -287,6 +287,11 @@ nav #profile-popup::before {
   border-right: 15px solid transparent;
   border-left: 15px solid transparent;
   border-bottom: 15px solid var(--global-color-primary-orange);
+}
+
+nav #profile-popup a:hover {
+  text-decoration: underline;
+  color: var(--global-color-primary-orange);
 }
 
 nav #cart-popup {

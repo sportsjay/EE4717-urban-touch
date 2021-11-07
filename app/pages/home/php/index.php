@@ -7,6 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="../css/index.css" />
   <title>Home</title>
+  <link rel="shortcut icon" type="image/x-icon" href="../../../../assets/images/favicon.png">
   <script src="https://kit.fontawesome.com/f8c6106aef.js" crossorigin="anonymous"></script>
   <script src="../script/index.js"></script>
   <?php include '../../../components/home-page/product-card.php' ?>
@@ -77,7 +78,7 @@
   <!-- Body -->
   <div class="home content global-flex-column-wrapper global-padding-horizontal">
 
-    <div class="global-flex-row-wrapper">
+    <div id="most-popular" class="global-flex-row-wrapper">
       <div class="global-flex-column-wrapper">
 
         <div style="position:relative;" class="global-flex-row-wrapper">
@@ -107,7 +108,7 @@
       ?>
     </section>
 
-    <div class="global-flex-row-wrapper">
+    <div id="seasonal-sale" class="global-flex-row-wrapper">
       <div class="global-flex-column-wrapper">
         <div style="position:relative;" class="global-flex-row-wrapper">
           <span class="global-content-typography-title">SEASONAL SALE</span>
@@ -170,6 +171,37 @@
   </div>
   <!-- Footer -->
   <?php include '../../../components/footer/php/index.php' ?>
+  <script>
+  function displayProfilePopup2Sec() {
+    var mouseIsOver = false;
+    var component = document.getElementById("profile-popup");
+    component.style.visibility = "visible";
+    component.style.opacity = 1;
+
+    component.onmouseenter = function() {
+      mouseIsOver = true
+    }
+
+    setTimeout(function() {
+      if (mouseIsOver == false) {
+        component.style.visibility = "hidden";
+        component.style.opacity = 0;
+      }
+    }, 2500);
+
+  }
+  </script>
+
+  <!-- Display profile popup if the user is from login / logout page -->
+  <?php
+  if (count($_GET['from']) != 0) {
+    echo "
+    <script>
+    displayProfilePopup2Sec()
+    </script>
+    ";
+  }
+  ?>
 </body>
 
 </html>

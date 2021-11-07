@@ -7,6 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="../css/index.css" />
   <title>Product</title>
+  <link rel="shortcut icon" type="image/x-icon" href="../../../../assets/images/favicon.png">
   <script src="https://kit.fontawesome.com/f8c6106aef.js" crossorigin="anonymous"></script>
 
 </head>
@@ -15,7 +16,6 @@
 <?php
 
 session_start();
-// session_unset();
 $isLoggedIn = $_SESSION['loggedin'];
 if (count($_SESSION["product_id"]) == 0) {
   $_SESSION["product_id"] = array(0);
@@ -121,7 +121,7 @@ if ($added_product_id > 0) {
   function loggedInCheck() {
     var isLoggedIn = "<?php echo $isLoggedIn; ?>";
     if (!isLoggedIn) {
-      window.location.href = '../../login-page/php/index.php';
+      window.location.href = '../../login-page/php/index.php?from=product-page';
       return false;
     }
     return true;
@@ -152,6 +152,8 @@ if ($added_product_id > 0) {
     window.history.replaceState(null, null, window.location.href);
   }
   </script>
+
+  <!-- Each time the add to cart button is clicked, the cart popup will be displayed -->
   <?php
   if (count($_POST) != 0) {
     echo "

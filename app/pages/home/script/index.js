@@ -1,3 +1,5 @@
+// Javascript for carousel
+
 var slideIndex = 1;
 
 document.addEventListener(
