@@ -1,0 +1,54 @@
+@import "../../../global.css";
+
+header.signup-page {
+  padding: 40px 0 30px;
+  text-align: center;
+}
+
+.signup-page {
+  justify-content: center;
+  padding-bottom: 70px;
+}
+
+.signup-page input[type="text"],
+.signup-page input[type="password"] {
+  padding: 10px 15px;
+  width: 100%;
+}
+
+.signup-page .form-wrapper {
+  width: 40%;
+  min-width: 300px;
+  margin: 0 auto;
+  gap: 25px;
+}
+
+.signup-page .form-items {
+  gap: 10px;
+}
+
+.signup-page .global-button {
+  background-color: var(--global-color-primary-orange);
+  border: 1px solid var(--global-color-primary-orange);
+  color: var(--global-color-primary-white);
+  padding: 12px;
+  margin-top: 15px;
+}
+
+.signup-page .global-button:hover {
+  background-color: var(--global-color-secondary-orange);
+}
+
+.signup-page .global-button-secondary {
+  background-color: var(--global-color-primary-white);
+  border: 1px solid var(--global-color-primary-gray);
+  padding: 8px;
+}
+
+.signup-page a {
+  color: var(--global-color-primary-orange);
+}
+
+.signup-page a:hover {
+  text-decoration: underline;
+}

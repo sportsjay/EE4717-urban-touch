@@ -59,8 +59,8 @@
             <label class="global-content-typography-text" for="clothing">Clothing</label>
           </div>
           <div class="form-items global-flex-row-wrapper">
-            <input type="checkbox" id="shoe" name="category[]" value="Shoe">
-            <label class="global-content-typography-text" for="shoe">Shoe</label>
+            <input type="checkbox" id="shoes" name="category[]" value="Shoes">
+            <label class="global-content-typography-text" for="shoes">Shoes</label>
           </div>
           <div class="form-items global-flex-row-wrapper">
             <input type="checkbox" id="pants" name="category[]" value="Pants">
@@ -79,7 +79,7 @@
             style="color: var(--global-color-danger); display:none;">&#10060; Price
             must be in digits</span>
           <br>
-          <input onclick="displayResultsNum()" type="submit" name="SUBMIT" value="APPLY" class="global-button">
+          <input type="submit" name="SUBMIT" value="APPLY" class="global-button">
         </section>
       </form>
       <section class="recommendation-wrapper"></section>
@@ -94,14 +94,16 @@
         foreach ($result as $product)
           $index++;
       }
+      if (count($_POST) != 0) {
+        echo "<span id='results-num' style='margin-bottom:10px; text-align:left; margin-left:10px;'
+        class='global-content-typography-subtext'>Total " . $index . " result(s)</span>";
+      }
       ?>
-      <span id="results-num" style="margin-bottom:10px; text-align:left; margin-left:10px;"
-        class="global-content-typography-subtext"><?php echo "Total " . $index . " result(s)" ?></span>
       <div class="grid-container">
         <?php
         if ($result) {
           foreach ($result as $product) {
-            echo createCard($product['prod_id'], $product['brand'], $product['prod_name'], $product['cat_name'], $product['price']);
+            echo createCard($product['prod_id'], $product['brand'], $product['prod_name'], $product['cat_name'], $product['price'], $product['sale_status']);
           }
         } else {
           echo "error:" . "<br>";

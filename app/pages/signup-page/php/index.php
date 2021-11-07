@@ -1,6 +1,6 @@
 <?php
 // Include config file
-require __DIR__ . '../../../../utils/connectDB.php';
+require __DIR__ . '../../../../sql/query/get_product.php';
 
 // Define variables and initialize with empty values
 $username = $password = $confirm_password = "";
@@ -11,14 +11,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
   // Validate username
   if (empty(trim($_POST["username"]))) {
-    $username_err = "Please enter a username.";
+    $username_err = "&#10060; Please enter a username";
   } elseif (!preg_match('/^[a-zA-Z0-9_]+$/', trim($_POST["username"]))) {
-    $username_err = "Username can only contain letters, numbers, and underscores.";
+    $username_err = "&#10060; Username can only contain letters, numbers, and underscores";
   } else {
     // Prepare a select statement
     $sql = "SELECT id FROM users WHERE username = ?";
 
-    if ($stmt = mysqli_prepare($link, $sql)) {
+    if ($stmt = mysqli_prepare($conn, $sql)) {
       // Bind variables to the prepared statement as parameters
       mysqli_stmt_bind_param($stmt, "s", $param_username);
 
@@ -31,12 +31,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         mysqli_stmt_store_result($stmt);
 
         if (mysqli_stmt_num_rows($stmt) == 1) {
-          $username_err = "This username is already taken.";
+          $username_err = "&#10060; This username is already taken";
         } else {
           $username = trim($_POST["username"]);
         }
       } else {
-        echo "Oops! Something went wrong. Please try again later.";
+        echo "Oops! Something went wrong. Please try again later";
       }
 
       // Close statement
@@ -46,20 +46,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
   // Validate password
   if (empty(trim($_POST["password"]))) {
-    $password_err = "Please enter a password.";
+    $password_err = "&#10060; Please enter a password.";
   } elseif (strlen(trim($_POST["password"])) < 6) {
-    $password_err = "Password must have atleast 6 characters.";
+    $password_err = "&#10060; Password must have atleast 6 characters";
   } else {
     $password = trim($_POST["password"]);
   }
 
   // Validate confirm password
   if (empty(trim($_POST["confirm_password"]))) {
-    $confirm_password_err = "Please confirm password.";
+    $confirm_password_err = "&#10060; Please re-enter the password";
   } else {
     $confirm_password = trim($_POST["confirm_password"]);
     if (empty($password_err) && ($password != $confirm_password)) {
-      $confirm_password_err = "Password did not match.";
+      $confirm_password_err = "&#10060; Password did not match";
     }
   }
 
@@ -69,7 +69,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Prepare an insert statement
     $sql = "INSERT INTO users (username, password) VALUES (?, ?)";
 
-    if ($stmt = mysqli_prepare($link, $sql)) {
+    if ($stmt = mysqli_prepare($conn, $sql)) {
       // Bind variables to the prepared statement as parameters
       mysqli_stmt_bind_param($stmt, "ss", $param_username, $param_password);
 
@@ -80,7 +80,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       // Attempt to execute the prepared statement
       if (mysqli_stmt_execute($stmt)) {
         // Redirect to login page
-        header("location: login.php");
+        header("location: ../../login-page/php/index.php");
       } else {
         echo "Oops! Something went wrong. Please try again later.";
       }
@@ -91,7 +91,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   }
 
   // Close connection
-  mysqli_close($link);
+  mysqli_close($conn);
 }
 ?>
 
@@ -99,54 +99,60 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="../css/index.css" />
   <title>Sign Up</title>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  <style>
-  body {
-    font: 14px sans-serif;
-  }
-
-  .wrapper {
-    width: 360px;
-    padding: 20px;
-  }
-  </style>
+  <script src="https://kit.fontawesome.com/f8c6106aef.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
-  <div class="wrapper">
-    <h2>Sign Up</h2>
-    <p>Please fill this form to create an account.</p>
-    <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
-      <div class="form-group">
-        <label>Username</label>
+  <?php include '../../../components/navigation/php/index.php' ?>
+  <header class="signup-page global-content-wrapper  global-flex-column-wrapper">
+    <span class="global-content-typography-title">SIGN UP</span>
+    <hr class="global-horizontal-line" width="90px">
+  </header>
+  <div class="global-content-wrapper signup-page ">
+    <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post"
+      class="global-flex-column-wrapper form-wrapper">
+      <span class="global-content-typography-text"><i class="fas fa-exclamation-circle"></i> Please fill this form to
+        create an account</span>
+
+      <div class="form-items global-flex-column-wrapper">
+        <label class="global-content-typography-text">Username</label>
         <input type="text" name="username"
-          class="form-control <?php echo (!empty($username_err)) ? 'is-invalid' : ''; ?>"
+          class="global-content-typography-text <?php echo (!empty($username_err)) ? 'input-danger' : ''; ?>"
           value="<?php echo $username; ?>">
-        <span class="invalid-feedback"><?php echo $username_err; ?></span>
+        <span style="color: var(--global-color-danger);"
+          class="global-content-typography-subtext"><?php echo $username_err; ?></span>
       </div>
-      <div class="form-group">
-        <label>Password</label>
+      <div class="form-items global-flex-column-wrapper">
+        <label class="global-content-typography-text">Password</label>
         <input type="password" name="password"
-          class="form-control <?php echo (!empty($password_err)) ? 'is-invalid' : ''; ?>"
+          class="global-content-typography-text <?php echo (!empty($password_err)) ? 'input-danger' : ''; ?>"
           value="<?php echo $password; ?>">
-        <span class="invalid-feedback"><?php echo $password_err; ?></span>
+        <span style="color: var(--global-color-danger);"
+          class="global-content-typography-subtext"><?php echo $password_err; ?></span>
       </div>
-      <div class="form-group">
-        <label>Confirm Password</label>
+      <div class="form-items global-flex-column-wrapper">
+        <label class="global-content-typography-text">Confirm Password</label>
         <input type="password" name="confirm_password"
-          class="form-control <?php echo (!empty($confirm_password_err)) ? 'is-invalid' : ''; ?>"
+          class="global-content-typography-text <?php echo (!empty($confirm_password_err)) ? 'input-danger' : ''; ?>"
           value="<?php echo $confirm_password; ?>">
-        <span class="invalid-feedback"><?php echo $confirm_password_err; ?></span>
+        <span style="color: var(--global-color-danger);"
+          class="global-content-typography-subtext"><?php echo $confirm_password_err; ?></span>
       </div>
-      <div class="form-group">
-        <input type="submit" class="btn btn-primary" value="Submit">
-        <input type="reset" class="btn btn-secondary ml-2" value="Reset">
+      <div class="form-items global-flex-column-wrapper">
+        <input type="submit" class="global-button" value="SIGN UP">
+        <input type="reset" class="global-button-secondary" value="CLEAR">
       </div>
-      <p>Already have an account? <a href="login.php">Login here</a>.</p>
+      <span class="global-content-typography-text">Already have an account? <a
+          href="../../login-page/php/index.php">Login here</a></span>
     </form>
   </div>
+  <?php include '../../../components/footer/php/index.php' ?>
+
 </body>
 
 </html>

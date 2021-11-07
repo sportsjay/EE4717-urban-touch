@@ -45,7 +45,6 @@ if (count($list_id) > 1) {
   } else {
     echo "Error: " . $insert_order_query . "<br>" . mysqli_error($conn);
   }
-  echo $insert_order_query . '<br>';
   /**
    * Insert order-products
    */
@@ -59,7 +58,6 @@ if (count($list_id) > 1) {
       $insert_order_product_query .= "INSERT INTO order_product (order_id, product_id)
 VALUES (" . $last_id . "," . $product_id . ");";
   }
-  echo $insert_order_product_query . '<br>';
   if (mysqli_multi_query($conn, $insert_order_product_query)) {
     echo "New orders created successfully <br>";
 
@@ -91,3 +89,5 @@ VALUES (" . $last_id . "," . $product_id . ");";
 } else {
   echo "Not sufficient in cart";
 }
+
+header("refresh:2; url= ../../pages/cart-page/php/index.php");

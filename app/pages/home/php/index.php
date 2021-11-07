@@ -9,13 +9,14 @@
   <title>Home</title>
   <script src="https://kit.fontawesome.com/f8c6106aef.js" crossorigin="anonymous"></script>
   <script src="../script/index.js"></script>
+  <?php include '../../../components/home-page/product-card.php' ?>
+  <?php require __DIR__ . '../../../../sql/query/get_product.php' ?>
+
 </head>
 
 <body>
   <!-- Navigation -->
   <?php include '../../../components/navigation/php/index.php' ?>
-  <?php include '../../../components/home-page/product-card.php' ?>
-  <?php require __DIR__ . '../../../../sql/query/get_product.php' ?>
 
   <!-- Banner -->
   <header class="banner">
@@ -42,7 +43,7 @@
           <p class="global-content-typography-title">Christmas Is Coming!<br>Holiday Gift
             <span style="color:var(--global-color-primary-orange)">SALE</span>
           </p>
-          <p class="global-content-typography-subtitle">UP TO 50% OFF
+          <p class="global-content-typography-subtitle">UP TO 25% OFF
           </p>
         </div>
       </div>
@@ -75,38 +76,18 @@
   </header>
   <!-- Body -->
   <div class="home content global-flex-column-wrapper global-padding-horizontal">
+
     <div class="global-flex-row-wrapper">
       <div class="global-flex-column-wrapper">
+
         <div style="position:relative;" class="global-flex-row-wrapper">
-          <span class="global-content-typography-title">SEASONAL SALE</span>
+          <span class="global-content-typography-title">MOST POPULAR</span>
           <i class="hover-for-popup global-content-typography-subtitle fas fa-question-circle"></i>
-          <span class="popup-dialog-box global-content-typography-subtext">These are products currently
-            on Winter Sale, up to 50% off.</span>
+          <span class="popup-dialog-box global-content-typography-subtext">These are curated collection
+            of our best selling items.</span>
         </div>
-        <hr class="global-horizontal-line" width="150px">
-      </div>
-    </div>
-    <section class="global-flex-row-wrapper product-list">
+        <hr class="global-horizontal-line" width="170px">
 
-      <?php
-      $result = getSaleProducts(5);
-      if ($result) {
-        foreach ($result as $product) {
-          echo createCardHome($product['prod_id'], $product['brand'], $product['prod_name'], $product['price']);
-        }
-      } else {
-        echo "error:" . "<br>";
-        echo mysqli_error($conn);
-      }
-      ?>
-    </section>
-
-    <div class="global-flex-row-wrapper">
-      <div style="position:relative;" class="global-flex-row-wrapper">
-        <span class="global-content-typography-title">MOST POPULAR</span>
-        <i class="hover-for-popup global-content-typography-subtitle fas fa-question-circle"></i>
-        <span class="popup-dialog-box global-content-typography-subtext">These are curated collection
-          of our best selling items.</span>
       </div>
     </div>
     <section class="global-flex-row-wrapper product-list">
@@ -116,7 +97,7 @@
         $idx = 1;
         foreach ($result as $product) {
           echo "<span class='num-indicator'>0<br>" . $idx . "</span>";
-          echo createCardHome($product['prod_id'], $product['brand'], $product['prod_name'], $product['price']);
+          echo createCardHome($product['prod_id'], $product['brand'], $product['prod_name'], $product['price'], $product['sale_status']);
           $idx += 1;
         }
       } else {
@@ -127,11 +108,41 @@
     </section>
 
     <div class="global-flex-row-wrapper">
-      <div style="position:relative;" class="global-flex-row-wrapper">
-        <span class="global-content-typography-title">UNDER RETAIL</span>
-        <i class="hover-for-popup global-content-typography-subtitle fas fa-question-circle"></i>
-        <span class="popup-dialog-box global-content-typography-subtext">These are products currently
-          listed cheaper than their original price.</span>
+      <div class="global-flex-column-wrapper">
+        <div style="position:relative;" class="global-flex-row-wrapper">
+          <span class="global-content-typography-title">SEASONAL SALE</span>
+          <i class="hover-for-popup global-content-typography-subtitle fas fa-question-circle"></i>
+          <span class="popup-dialog-box global-content-typography-subtext">These are products currently
+            on Winter Sale, up to 50% off.</span>
+        </div>
+        <hr class="global-horizontal-line" width="170px">
+      </div>
+    </div>
+    <section class="global-flex-row-wrapper product-list">
+
+      <?php
+      $result = getSaleProducts(8);
+      if ($result) {
+        foreach ($result as $product) {
+          echo createCardHome($product['prod_id'], $product['brand'], $product['prod_name'], $product['price'], $product['sale_status']);
+        }
+      } else {
+        echo "error:" . "<br>";
+        echo mysqli_error($conn);
+      }
+      ?>
+    </section>
+
+    <div class="global-flex-row-wrapper">
+      <div class="global-flex-column-wrapper">
+
+        <div style="position:relative;" class="global-flex-row-wrapper">
+          <span class="global-content-typography-title">UNDER RETAIL</span>
+          <i class="hover-for-popup global-content-typography-subtitle fas fa-question-circle"></i>
+          <span class="popup-dialog-box global-content-typography-subtext">These are products currently
+            listed cheaper than their original price.</span>
+        </div>
+        <hr class="global-horizontal-line" width="170px">
       </div>
     </div>
     <section class="global-flex-row-wrapper product-list">
@@ -139,7 +150,7 @@
       $result = getRandomProducts(8);
       if ($result) {
         foreach ($result as $product) {
-          echo createCardHome($product['prod_id'], $product['brand'], $product['prod_name'], $product['price']);
+          echo createCardHome($product['prod_id'], $product['brand'], $product['prod_name'], $product['price'], $product['sale_status']);
         }
       } else {
         echo "error:" . "<br>";

@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="../css/index.css" />
   <title>Contact Us</title>
   <script src="https://kit.fontawesome.com/f8c6106aef.js" crossorigin="anonymous"></script>
-
+  <?php include '../../../sql/query/get_product.php' ?>
 </head>
 
 <body>

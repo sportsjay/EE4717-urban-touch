@@ -79,3 +79,7 @@ tr:nth-last-of-type(2) .form-items {
 .faq a {
   color: var(--global-color-primary-orange);
 }
+
+.faq a:hover {
+  text-decoration: underline;
+}

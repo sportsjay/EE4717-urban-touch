@@ -9,7 +9,7 @@
   <title>About Us</title>
   <script src="https://kit.fontawesome.com/f8c6106aef.js" crossorigin="anonymous"></script>
 </head>
-<?php include '../../../utils/connectDB.php' ?>
+<?php include '../../../sql/query/get_product.php' ?>
 
 <body>
   <!-- Navigation -->
@@ -64,7 +64,7 @@
           </tr>
           <tr>
             <td><i class="fas fa-phone-alt"></i></td>
-            <td>(+65) 8311 8031</td>
+            <td>(+65) 1234 1234</td>
           </tr>
         </table>
       </div>

@@ -79,6 +79,10 @@
   padding: 10px;
 }
 
+.shop-page .price-after-sale {
+  color: var(--global-color-danger);
+}
+
 .product-card {
   padding: 15px;
   box-sizing: border-box;

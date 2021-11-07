@@ -8,20 +8,20 @@
   <link rel="stylesheet" href="../css/index.css" />
   <title>Cart</title>
   <script src="https://kit.fontawesome.com/f8c6106aef.js" crossorigin="anonymous"></script>
+  <?php include '../../../sql/query/get_product.php' ?>
 </head>
 
 <body>
   <!-- Navigation -->
   <?php include '../../../components/navigation/php/index.php' ?>
-  <?php include '../../../sql/query/get_product.php' ?>
   <?php include '../../../components/cart-page/order-wrapper.php' ?>
   <!-- Banner -->
   <header></header>
   <!-- Body -->
   <div class="cart-page global-content-wrapper global-flex-row-wrapper">
     <div class="left-section global-flex-column-wrapper">
-      <span class="global-content-typography-title">MY SHOPPING CART</span>
-      <hr class="global-horizontal-line" width="230px" style="margin-left: 0;">
+      <span class="global-content-typography-title">MY CART</span>
+      <hr class="global-horizontal-line" width="100px" style="margin-left: 0;">
       <br>
       <div class="order-container global-flex-column-wrapper">
         <?php
@@ -36,7 +36,7 @@
             $cat_name = $_product['cat_name'];
             $gender = $_product['gender'];
             $sale_status = $_product['sale_status'];
-            echo createOrderCard($id, $_product['prod_name'], $_product['brand'], $_product['cat_name'], $_product['price'], $_product['gender'], $idx);
+            echo createOrderCard($id, $prod_name, $brand, $cat_name, $price, $gender, $sale_status, $idx);
           }
           $idx += 1;
         }
@@ -47,7 +47,9 @@
       <span class="global-content-typography-subtitle">SUMMARY</span>
       <hr class="global-horizontal-line" width="90px" style="margin-left: 0; border-width: 1px">
       <br>
-      <span class="global-content-typography-text"><?php echo count($_SESSION["product_id"]) - 1 ?> PRODUCT(S)</span>
+      <span
+        class="global-content-typography-text"><?php echo (count($_SESSION["product_id"]) - 1) < 0 ? 0 : count($_SESSION["product_id"]) - 1 ?>
+        PRODUCT(S)</span>
       <br>
       <table>
         <td>
@@ -62,7 +64,8 @@
             <span class="global-content-typography-text">Delivery Fee</span>
           </td>
           <td>
-            <span class="global-content-typography-text"><b>SGD 12.00</b></span>
+            <span class="global-content-typography-text"><b>SGD <span id="deliv_fee">
+                  <?php echo (count($_SESSION["product_id"]) - 1) <= 0 ? '0.00' : '12.00' ?></span></b></span>
           </td>
         </tr>
         <tr>
@@ -84,25 +87,50 @@
             </span>
           </td>
           <td>
-            <span class="global-content-typography-text"><b id="grand_total">SGD 228</b></span>
+            <span class="global-content-typography-text"><b id="grand_total">SGD 0</b></span>
           </td>
         </tr>
       </table>
       <br><br>
 
-      <button onclick="openModal()" class="global-button">GO TO CHECKOUT</button>
+      <button <?php echo (count($_SESSION["product_id"]) - 1) <= 0 ? 'disabled' : '' ?> onclick="openModal()"
+        class="global-button">
+        <?php echo (count($_SESSION["product_id"]) - 1) <= 0 ? 'YOUR CART IS EMPTY' : 'GO TO CHECKOUT' ?></button>
     </div>
   </div>
   <div id="checkout-modal" class="checkout-modal global-flex-column-wrapper">
-    <div style="min-height: 100vh; min-width:100vw; position: absolute; top:0; left:0;  background-color: aliceblue;
-  opacity: 0.7; z-index:1;">
+    <div style="min-height: 100vh; min-width:100vw; position: absolute; top:0; left:0;  background-color: white;
+  opacity: 0.7; filter: brightness(0.2); z-index:1;">
     </div>
     <form class="modal-item global-flex-column-wrapper" action="../../../sql/query/create_order.php" method="POST">
-      <span onclick="closeModal()" style="cursor:pointer" class='global-content-typography-subtext'>&#9587;</span>
-      <span class="global-content-typography-subtitle">CONFIRM TRANSACTION</span>
-      <input type="text" hidden name="id_list" value="<?php
-                                                      echo implode(',', $_SESSION['product_id']) ?>">
-      <input type="submit" class="global-button" value="CONFIRM">
+      <div class="global-flex-row-wrapper" style="justify-content: space-between; width: 100%">
+        <span style="margin:auto 0" class="global-content-typography-subtitle">CONFIRM TRANSACTION</span>
+        <span onclick="closeModal()" style="cursor:pointer" class=' global-content-typography-subtext'>&#9587;</span>
+      </div>
+      <hr class="global-horizontal-line" width="70%" style="border-width: 1px; margin-left:0">
+      <ul>
+        <?php
+        foreach ($_SESSION['product_id'] as $id) {
+          $product = getProduct($id);
+          foreach ($product as $_product) {
+            $prod_name =  $_product['prod_name'];
+            $brand = $_product['brand'];
+            echo "<li class='global-content-typography-subtext' style='margin-bottom: 10px'>" . $brand . " - " . $prod_name;
+          }
+        }
+        ?>
+      </ul>
+      <div class="global-flex-row-wrapper" style="justify-content: space-between; width: 100%">
+        <span class="global-content-typography-text">Grand Total </span>
+        <span class="global-content-typography-text"><b id="modal_grand_total">SGD 0</b></span>
+      </div>
+      <br>
+      <div class="global-flex-row-wrapper" style="justify-content: space-between; width: 100%">
+        <button onclick="closeModal()" type="reset" class="global-button-secondary">CANCEL</button>
+        <input type="text" hidden name="id_list" value="<?php
+                                                        echo implode(',', $_SESSION['product_id']) ?>">
+        <input type="submit" class="global-button" value="CONFIRM">
+      </div>
     </form>
   </div>
   <!-- Footer -->
@@ -122,6 +150,7 @@
 
   function openModal() {
     document.getElementById("checkout-modal").style.visibility = "unset";
+    document.getElementById("modal_grand_total").innerHTML = document.getElementById('grand_total').innerHTML;
   }
 
   function calculateTotalPrice() {
@@ -131,8 +160,9 @@
     }
     document.getElementById('total_prod_price').innerHTML = `SGD ${parseFloat(totalPrice).toFixed(2)}`;
     document.getElementById('gst_price').innerHTML = `SGD ${parseFloat(totalPrice*0.07).toFixed(2)}`;
+    let delivery_fee = parseInt(document.getElementById('deliv_fee').innerHTML);
     document.getElementById('grand_total').innerHTML =
-      `SGD ${parseFloat(totalPrice + totalPrice*0.07 + 12).toFixed(2)}`;
+      `SGD ${parseFloat(totalPrice + totalPrice*0.07 + delivery_fee).toFixed(2)}`;
   }
 
   // prevent form re-submission popup

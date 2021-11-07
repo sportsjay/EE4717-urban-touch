@@ -48,7 +48,7 @@
   color: var(--global-color-secondary-gray);
 }
 
-.right-section > .price-after-sale {
+.product-page .price-after-sale {
   color: var(--global-color-danger);
 }
 
@@ -116,7 +116,7 @@
 }
 
 .recommendation-items > .reload-btn {
-  margin: 70px auto 30px auto;
+  margin: 0px auto 100px auto;
   width: fit-content;
   color: white;
   border-radius: 10px;
