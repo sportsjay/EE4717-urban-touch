@@ -8,7 +8,9 @@
 }
 
 .utilities-wrapper {
-  height: 100%;
+  min-width: max-content;
+  overflow-y: auto;
+  height: 100vh;
   position: sticky;
   top: calc(var(--navbar-height) + 20px);
 }
@@ -120,4 +122,16 @@
 
 .product-card .lower-section {
   justify-content: space-between;
+}
+
+@media only screen and (min-width: 1480px) {
+  .product-list > .grid-container {
+    grid-template-columns: 23.5% 23.5% 23.5% 23.5%;
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .product-list > .grid-container {
+    grid-template-columns: 49% 49%;
+  }
 }
